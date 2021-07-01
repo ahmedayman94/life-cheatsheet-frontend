@@ -1,8 +1,13 @@
-const Home = () => {
+import Navbar from "../components/Navbar";
+
+const Home: React.FunctionComponent = (props) => {
     return (
-        <div>
-            Homepage
-        </div>
+        <>
+            <Navbar />
+            <div className="container">
+                Homepage
+            </div>
+        </>
     )
 }
 

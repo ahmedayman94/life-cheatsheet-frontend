@@ -4,7 +4,7 @@ import { routes } from './config/routes';
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Switch>
           {routes.map((route, index) => (
@@ -17,7 +17,7 @@ function App() {
           ))}
         </Switch>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

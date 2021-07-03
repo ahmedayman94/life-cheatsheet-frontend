@@ -16,7 +16,7 @@ const Sidebar = ({ categories }: { categories: Category[] }) => {
                 <ul className="nav">
                     {categories.map(category => (
                         <li className={`nav-item${category.id === categoryId ? ' active' : ''}`} key={category.id}>
-                            <Link className="nav-link" to={`/categories/${category.id}`} key={category.id} >
+                            <Link className="item-link" to={`/categories/${category.id}`} key={category.id} >
                                 {category.title}
                             </Link>
                         </li>))}

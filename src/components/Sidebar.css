@@ -15,11 +15,11 @@
 
 .category-title {
     font-weight: 500;
-    font-size: 1.2rem;
 }
 
-li {
+.item-link {
     font-weight: 400;
+    font-size: 90%;
 }
 
 a {
@@ -30,6 +30,6 @@ a:hover {
     text-decoration: none;
 }
 
-.active .nav-link {
+.active .item-link {
     color: white !important;
 }

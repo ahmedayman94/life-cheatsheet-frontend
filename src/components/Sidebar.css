@@ -1,0 +1,35 @@
+.side-bar {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    width: 15%;
+    margin-top: 56px;
+}
+
+@media screen and (max-width: 600px) {
+    .side-bar {
+        display: none !important;
+    }
+}
+
+.category-title {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+li {
+    font-weight: 400;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.active .nav-link {
+    color: white !important;
+}

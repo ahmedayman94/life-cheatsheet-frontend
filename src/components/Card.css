@@ -1,0 +1,6 @@
+.card-default {
+    border-radius: 4%;
+    height: 190px;
+    width: 320px;
+    overflow: hidden;
+}

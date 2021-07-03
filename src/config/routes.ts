@@ -12,5 +12,10 @@ export const routes: IRoute[] = [
         component: Login,
         path: '/login',
         exact: true,
+    },
+    {
+        component: Home,
+        path: '/categories/:id',
+        exact: true,
     }
 ];

@@ -15,7 +15,7 @@ export const routes: IRoute[] = [
     },
     {
         component: Home,
-        path: '/categories/:id',
+        path: '/categories/:categoryId/:posts?/:postId?',
         exact: true,
-    }
+    },
 ];

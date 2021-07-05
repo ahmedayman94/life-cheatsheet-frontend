@@ -20,13 +20,10 @@
 .item-link {
     font-weight: 400;
     font-size: 90%;
-}
-
-a {
     color: rgba(255, 255, 255, 0.5);
 }
 
-a:hover {
+.item-link:hover {
     text-decoration: none;
 }
 

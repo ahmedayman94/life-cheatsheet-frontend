@@ -4,3 +4,9 @@
     width: 320px;
     overflow: hidden;
 }
+
+.card-text {
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}

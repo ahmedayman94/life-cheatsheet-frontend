@@ -27,6 +27,8 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
     console.log("active post id: " + activePostId);
     if (activePostId && posts) {
       setActivePost(posts.find((post) => post.id === +activePostId));
+    } else {
+      setActivePost(undefined);
     }
   }, [location, posts]);
 
@@ -63,7 +65,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
           </div>
         </div>
         {activePostId != null && activePost != null && (
-          <PostModal post={activePost} />
+          <PostModal post={activePost} setPosts={setPosts} />
         )}
       </main>
     </>

@@ -13,3 +13,7 @@ export function getCategories(): Promise<Category[]> {
 export function getPostsForCategory(categoryId: number): Promise<Post[]> {
     return Promise.resolve(postsMock);
 }
+
+export function createNewPostAsync(post: Post): Promise<Post> {
+    return Promise.resolve(post);
+}

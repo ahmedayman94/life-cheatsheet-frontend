@@ -1,5 +1,11 @@
 import { Link, useRouteMatch } from "react-router-dom";
-import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
+import {
+  convertFromRaw,
+  convertToRaw,
+  Editor,
+  EditorState,
+  RichUtils,
+} from "draft-js";
 import { Post } from "../../interfaces/post.model";
 import "./PostModal.css";
 import "draft-js/dist/Draft.css";
@@ -30,7 +36,26 @@ const PostModal = ({ post, setPosts }: PostModalProps) => {
       setPosts((posts) => posts.map((p) => (p.id === post.id ? newPost : p)));
     },
   });
+
+  const onEditorChange = (editorState: EditorState) =>
+    formik.setFieldValue("postEditorState", editorState);
+
   const match = useRouteMatch<{ categoryId: string }>();
+
+  function _onBoldClick() {
+    const newState = RichUtils.toggleInlineStyle(
+      formik.values.postEditorState,
+      "BOLD"
+    );
+    onEditorChange(newState);
+  }
+  function onCodeClick() {
+    const newState = RichUtils.toggleInlineStyle(
+      formik.values.postEditorState,
+      "CODE"
+    );
+    onEditorChange(newState);
+  }
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -58,13 +83,18 @@ const PostModal = ({ post, setPosts }: PostModalProps) => {
               </button>
             </div>
             <div className="modal-body">
+              <button type="button" onClick={_onBoldClick}>
+                Bold
+              </button>
+              <button type="button" onClick={onCodeClick}>
+                Code
+              </button>
               <Editor
                 editorState={formik.values.postEditorState}
                 onChange={(editorState) => {
-                  formik.setFieldValue("postEditorState", editorState);
+                  onEditorChange(editorState);
                 }}
               />
-              {/* {post.content} */}
             </div>
             <div className="modal-footer">
               <Link

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { RouteComponentProps, useLocation } from "react-router-dom";
-import Card from "../components/Card/Card";
 import Navbar from "../components/Navbar/Navbar";
 import PostModal from "../components/PostModal/PostModal";
 import Posts from "../components/Posts/Posts";
@@ -12,6 +11,7 @@ import {
   getCategories as getCategoriesAsync,
   getPostsForCategory as getPostsForCategoryAsync,
 } from "../utils/http-clients";
+import { setActiveCategory } from "../utils/store";
 
 export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {}
@@ -38,32 +38,27 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
     getCategoriesAsync()
       .then((res) => {
         console.log("getCategories");
-        setCategories(res);
+        setCategories(setActiveCategory(res, activeCategoryId));
       })
       .catch((err) => {});
   }, []);
 
   useEffect(() => {
     async function initAsync() {
+      setCategories((categories) =>
+        setActiveCategory(categories, activeCategoryId)
+      );
       if (activeCategoryId != null) {
         console.log("getPostsForCateogory");
         setLoading(true);
         try {
-          const posts = await getPostsForCategoryAsync(activeCategoryId); //.then((posts) => {
+          const posts = await getPostsForCategoryAsync(activeCategoryId);
           setPosts(posts);
         } catch (error) {
         } finally {
           setLoading(false);
         }
       }
-
-      setCategories((categories) =>
-        categories?.map((category) =>
-          category.id === activeCategoryId
-            ? { ...category, active: true }
-            : { ...category, active: false }
-        )
-      );
     }
 
     initAsync();

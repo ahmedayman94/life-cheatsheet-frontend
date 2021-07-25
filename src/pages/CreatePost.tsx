@@ -26,7 +26,7 @@ const CreatePost = () => {
       };
 
       newPost = await createNewPostAsync(newPost);
-      setPosts((posts) => [...posts, newPost]);
+      // setPosts((posts) => [...posts, newPost]);
     },
   });
 
@@ -51,6 +51,3 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
-function setPosts(arg0: (posts: any) => any) {
-  throw new Error("Function not implemented.");
-}

@@ -54,11 +54,9 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
         try {
           const posts = await getPostsForCategoryAsync(activeCategoryId);
           setPosts(posts);
-        } catch (error) {
-        } finally {
-          setLoading(false);
-        }
+        } catch (error) {}
       }
+      setLoading(false);
     }
 
     initAsync();

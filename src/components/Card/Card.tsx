@@ -9,14 +9,15 @@ export interface CardProps {
 }
 
 const Card = ({ post }: CardProps) => {
-  const linkToPost = `/categories/${post.category}/posts/${post.id}`;
+  const [editorState, setEditorState] = useState<EditorState>();
+
   useEffect(() => {
     const content = convertFromRaw(JSON.parse(post.content));
     setEditorState(EditorState.createWithContent(content));
     return () => {};
   }, [post]);
-  const [editorState, setEditorState] = useState<EditorState>();
-  console.log("card component created");
+
+  const linkToPost = `/categories/${post.category}/posts/${post.id}`;
   return (
     <div className="card card-default">
       <div className="card-body">

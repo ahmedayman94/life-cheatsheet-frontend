@@ -11,9 +11,13 @@ export function getCategories(): Promise<Category[]> {
 }
 
 export function getPostsForCategory(categoryId: number): Promise<Post[]> {
-    return Promise.resolve(postsMock);
+    return delay(500).then(() => Promise.resolve(postsMock));
 }
 
 export function createNewPostAsync(post: Post): Promise<Post> {
     return Promise.resolve(post);
+}
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }

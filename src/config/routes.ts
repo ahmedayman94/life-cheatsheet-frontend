@@ -6,17 +6,12 @@ import Login from "../pages/Login";
 export const routes: IRoute[] = [
     {
         component: Home,
-        path: '/',
+        path: ['/', '/categories/:categoryId/:posts?/:postId?'],
         exact: true,
     },
     {
         component: Login,
         path: '/login',
-        exact: true,
-    },
-    {
-        component: Home,
-        path: '/categories/:categoryId/:posts?/:postId?',
         exact: true,
     },
     {

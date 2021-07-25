@@ -3,7 +3,9 @@ import { RouteComponentProps, useLocation } from "react-router-dom";
 import Card from "../components/Card/Card";
 import Navbar from "../components/Navbar/Navbar";
 import PostModal from "../components/PostModal/PostModal";
+import Posts from "../components/Posts/Posts";
 import Sidebar from "../components/Sidebar/Sidebar";
+import Spinner from "../components/Spinner/Spinner";
 import { Category } from "../interfaces/category.model";
 import { Post } from "../interfaces/post.model";
 import {
@@ -15,16 +17,16 @@ export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {}
 
 const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<Category[]>();
   const [posts, setPosts] = useState<Post[]>([]);
   const [activePost, setActivePost] = useState<Post>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   const activeCategoryId =
     match.params.categoryId != null ? +match.params.categoryId : null;
   const activePostId = match.params.postId;
 
   useEffect(() => {
-    console.log("active post id: " + activePostId);
     if (activePostId && posts) {
       setActivePost(posts.find((post) => post.id === +activePostId));
     } else {
@@ -35,34 +37,46 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
   useEffect(() => {
     getCategoriesAsync()
       .then((res) => {
-        setCategories(
-          res.map((category) =>
-            category.id === activeCategoryId
-              ? { ...category, active: true }
-              : category
-          )
-        );
+        console.log("getCategories");
+        setCategories(res);
       })
       .catch((err) => {});
+  }, []);
 
-    getPostsForCategoryAsync(1).then((posts) => setPosts(posts));
+  useEffect(() => {
+    async function initAsync() {
+      if (activeCategoryId != null) {
+        console.log("getPostsForCateogory");
+        setLoading(true);
+        try {
+          const posts = await getPostsForCategoryAsync(activeCategoryId); //.then((posts) => {
+          setPosts(posts);
+        } catch (error) {
+        } finally {
+          setLoading(false);
+        }
+      }
 
+      setCategories((categories) =>
+        categories?.map((category) =>
+          category.id === activeCategoryId
+            ? { ...category, active: true }
+            : { ...category, active: false }
+        )
+      );
+    }
+
+    initAsync();
     return () => {};
   }, [activeCategoryId]);
 
   return (
     <>
       <Navbar />
-      <Sidebar categories={categories} />
+      <Sidebar categories={categories ?? []} />
       <main className="h-100" style={{ marginTop: "56px" }}>
         <div className="container h-100">
-          <div className="row">
-            {posts.map((post) => (
-              <div className="col-md-4 my-4" key={post.id}>
-                <Card key={post.id} post={post} />
-              </div>
-            ))}
-          </div>
+          {loading ? <Spinner /> : <Posts posts={posts} />}
         </div>
         {activePostId != null && activePost != null && (
           <PostModal post={activePost} setPosts={setPosts} />

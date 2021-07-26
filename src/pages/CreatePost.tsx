@@ -66,7 +66,7 @@ const CreatePost = () => {
           >
             <div className="row flex-grow-0">
               <div className="col-12 mt-5">
-                <h5 className="w-100">
+                <h3 className="w-100">
                   <input
                     id="postTitle"
                     name="postTitle"
@@ -77,7 +77,7 @@ const CreatePost = () => {
                     onChange={formik.handleChange}
                     value={formik.values.postTitle}
                   />
-                </h5>
+                </h3>
               </div>
             </div>
             <div className="row flex-grow-0">

@@ -1,4 +1,32 @@
 .post-title {
     font-weight: bold;
     border: none;
+    color: var(--font-color);
+    background-color: var(--bg-sidenav-color);
+}
+
+.modal-content {
+    background-color: var(--bg-sidenav-color);
+}
+
+.modal {
+    animation: 200ms mymove forwards;
+}
+
+@keyframes mymove {
+    0% {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    25% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    75% {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 }

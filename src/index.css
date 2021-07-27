@@ -14,3 +14,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.dark-theme {
+  --bg-color: #101820;
+  --bg-nav-color: #1d252d;
+  --bg-sidenav-color: #1d252d;
+  --font-color: #cddee9;
+}
+
+.light-theme {
+  --bg-color: #22227e;
+  --bg-nav-color: #fff;
+  --font-color: #000;
+}
+
+#root {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}

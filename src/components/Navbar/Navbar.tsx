@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { ClipboardPlus } from "react-bootstrap-icons";
+import "./Navbar.css";
 
 const Navbar = () => {
   const pathName = useLocation()?.pathname;
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <nav className="navbar navbar-expand-lg fixed-top">
       <Link className="navbar-brand ml-3" to="/">
         Life Cheatsheet
       </Link>
@@ -38,7 +39,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="ml-auto">
-        <Link to="/create-post" className="btn btn-light">
+        <Link to="/create-post" className="btn btn-light mx-4">
           <span className="mr-2">
             <ClipboardPlus style={{ fontSize: "1.2rem" }} />
           </span>

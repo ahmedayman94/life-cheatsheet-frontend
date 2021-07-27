@@ -3,6 +3,8 @@
     height: 190px;
     width: 320px;
     overflow: hidden;
+    background-color: var(--bg-color);
+    border: 1px solid var(--font-color);
 }
 
 .card-text {

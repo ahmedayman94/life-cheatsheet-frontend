@@ -62,11 +62,23 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className="modal fade show d-block" tabIndex={-1}>
-        <div className="modal-dialog">
+      {/* <div
+        className="modal fade show d-block"
+        tabIndex={-1}
+        role="dialog"
+        aria-hidden={true}
+      > */}
+      <div
+        className="modal fade show d-block"
+        id="exampleModal"
+        tabIndex={-1}
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+      >
+        <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title w-100">
+              <h4 className="modal-title w-100">
                 <input
                   id="postTitle"
                   name="postTitle"
@@ -75,15 +87,15 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
                   onChange={formik.handleChange}
                   value={formik.values.postTitle}
                 />
-              </h5>
-              <button
+              </h4>
+              {/* <button
                 type="button"
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <span className="closeModal" aria-hidden="true">&times;</span>
+              </button> */}
             </div>
             <div className="modal-body">
               <button type="button" onClick={_onBoldClick}>

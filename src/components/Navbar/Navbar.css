@@ -1,0 +1,9 @@
+.navbar {
+    background-color: var(--bg-nav-color);
+    color: var(--font-color);
+}
+
+a {
+    color: var(--font-color);
+    font-weight: bold;
+}

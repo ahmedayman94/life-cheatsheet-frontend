@@ -12,7 +12,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
   activeCategoryId,
 }) => {
   return (
-    <nav className="side-bar position-fixed bg-dark">
+    <nav className="side-bar position-fixed">
       <div className="mt-4 px-3">
         <div className="my-2 category-title">Categories</div>
         <ul className="nav">

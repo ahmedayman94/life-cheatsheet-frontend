@@ -25,10 +25,7 @@ const AppContainer = () => {
   return (
     <>
       <Navbar />
-      <Sidebar
-        activeCategoryId={activeCategoryId}
-        categories={categories ?? []}
-      />
+      <Sidebar activeCategoryId={activeCategoryId} categories={categories} />
       <main className="h-100" style={{ marginTop: "56px" }}>
         <div className="container h-100">
           <Switch>

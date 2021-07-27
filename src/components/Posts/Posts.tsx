@@ -6,7 +6,7 @@ export interface PostsProps {
   posts: Post[];
 }
 
-const Posts = ({ posts }: PostsProps) => {
+const Posts: React.FunctionComponent<PostsProps> = ({ posts }) => {
   return (
     <div className="row">
       {posts.map((post) => (

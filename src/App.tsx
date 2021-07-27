@@ -1,20 +1,16 @@
-import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { routes } from './config/routes';
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { routes } from "./config/routes";
+import AppContainer from "./AppContainer";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Switch>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          ))}
+          <Route path="/login" component={Login} exact />
+          <Route path="/" component={AppContainer} />
         </Switch>
       </BrowserRouter>
     </>

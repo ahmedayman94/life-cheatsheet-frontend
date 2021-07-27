@@ -1,30 +1,49 @@
-import { useCallback, useEffect, useState } from "react";
-import { RouteComponentProps, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import PostModal from "../components/PostModal/PostModal";
 import Posts from "../components/Posts/Posts";
-import Sidebar from "../components/Sidebar/Sidebar";
 import Spinner from "../components/Spinner/Spinner";
 import { Category } from "../interfaces/category.model";
 import { Post } from "../interfaces/post.model";
-import {
-  getCategories as getCategoriesAsync,
-  getPostsForCategory as getPostsForCategoryAsync,
-} from "../utils/http-clients";
-import { setActiveCategory } from "../utils/store";
+import { getPostsForCategory } from "../utils/http-clients";
 
 export interface HomeProps
-  extends RouteComponentProps<{ categoryId: string; postId: string }> {}
+  extends RouteComponentProps<{ categoryId: string; postId: string }> {
+  categories: Category[];
+  setCategories: React.Dispatch<React.SetStateAction<Category[]>>;
+  activeCategoryId: number | undefined;
+  setActiveCategoryId: React.Dispatch<React.SetStateAction<number | undefined>>;
+}
 
-const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
-  const [categories, setCategories] = useState<Category[]>();
+const Home: React.FunctionComponent<HomeProps> = ({
+  match,
+  categories,
+  setActiveCategoryId,
+}) => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [activePost, setActivePost] = useState<Post>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const activeCategoryId =
-    match.params.categoryId != null ? +match.params.categoryId : null;
   const activePostId = match.params.postId;
+
+  useEffect(() => {
+    async function initAsync() {
+      const activeCategoryId =
+        match.params.categoryId != null ? +match.params.categoryId : undefined;
+      setActiveCategoryId(activeCategoryId);
+
+      if (activeCategoryId) {
+        setLoading(true);
+        const posts = await getPostsForCategory(activeCategoryId);
+        setPosts(posts);
+      } else setPosts([]);
+
+      setLoading(false);
+    }
+
+    initAsync();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [categories, match.params.categoryId]);
 
   useEffect(() => {
     if (activePostId && posts) {
@@ -34,47 +53,12 @@ const Home: React.FunctionComponent<HomeProps> = ({ match }) => {
     }
   }, [activePostId, posts]);
 
-  useEffect(() => {
-    getCategoriesAsync()
-      .then((res) => {
-        console.log("getCategories");
-        setCategories(setActiveCategory(res, activeCategoryId));
-      })
-      .catch((err) => {});
-  }, []);
-
-  useEffect(() => {
-    async function initAsync() {
-      setCategories((categories) =>
-        setActiveCategory(categories, activeCategoryId)
-      );
-      if (activeCategoryId != null) {
-        console.log("getPostsForCateogory");
-        setLoading(true);
-        try {
-          const posts = await getPostsForCategoryAsync(activeCategoryId);
-          setPosts(posts);
-        } catch (error) {}
-      }
-      setLoading(false);
-    }
-
-    initAsync();
-    return () => {};
-  }, [activeCategoryId]);
-
   return (
     <>
-      <Navbar />
-      <Sidebar categories={categories ?? []} />
-      <main className="h-100" style={{ marginTop: "56px" }}>
-        <div className="container h-100">
-          {loading ? <Spinner /> : <Posts posts={posts} />}
-        </div>
-        {activePostId != null && activePost != null && (
-          <PostModal post={activePost} setPosts={setPosts} />
-        )}
-      </main>
+      {loading ? <Spinner /> : <Posts posts={posts} />}
+      {activePostId != null && activePost != null && (
+        <PostModal post={activePost} setPosts={setPosts} />
+      )}
     </>
   );
 };

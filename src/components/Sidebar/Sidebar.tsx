@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import { Category } from "../../interfaces/category.model";
 import "./Sidebar.css";
 
-const Sidebar = ({ categories }: { categories: Category[] }) => {
+export interface SidebarProps {
+  categories: Category[];
+  activeCategoryId: number | undefined;
+}
+
+const Sidebar: React.FunctionComponent<SidebarProps> = ({
+  categories,
+  activeCategoryId,
+}) => {
   return (
     <nav className="side-bar position-fixed bg-dark">
       <div className="mt-4 px-3">
@@ -10,7 +18,9 @@ const Sidebar = ({ categories }: { categories: Category[] }) => {
         <ul className="nav">
           {categories.map((category) => (
             <li
-              className={`my-2 nav-item${category.active ? " active" : ""}`}
+              className={`my-2 nav-item${
+                category.id === activeCategoryId ? " active" : ""
+              }`}
               key={category.id}
             >
               <Link

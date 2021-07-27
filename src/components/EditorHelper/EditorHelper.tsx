@@ -1,11 +1,13 @@
-import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
-import React, { useState } from "react";
+import { convertFromRaw, Editor, EditorState } from "draft-js";
+import { useState } from "react";
 
 export interface EditorHelperProps {
   rawContent: string;
 }
 
-const EditorHelper = ({ rawContent }: EditorHelperProps) => {
+const EditorHelper: React.FunctionComponent<EditorHelperProps> = ({
+  rawContent,
+}) => {
   const content = convertFromRaw(JSON.parse(rawContent));
   const [editorState, setEditorState] = useState<EditorState>(
     EditorState.createWithContent(content)

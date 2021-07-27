@@ -8,7 +8,7 @@ export interface CardProps {
   post: Post;
 }
 
-const Card = ({ post }: CardProps) => {
+const Card: React.FunctionComponent<CardProps> = ({ post }) => {
   const [editorState, setEditorState] = useState<EditorState>();
 
   useEffect(() => {

@@ -16,7 +16,10 @@ export interface PostModalProps {
   setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
 }
 
-const PostModal = ({ post, setPosts }: PostModalProps) => {
+const PostModal: React.FunctionComponent<PostModalProps> = ({
+  post,
+  setPosts,
+}) => {
   const formik = useFormik({
     initialValues: {
       postTitle: post.title,

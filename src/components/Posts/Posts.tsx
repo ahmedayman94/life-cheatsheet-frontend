@@ -4,14 +4,22 @@ import Card from "../Card/Card";
 
 export interface PostsProps {
   posts: Post[];
+  activeCategoryId: number | undefined;
 }
 
-const Posts: React.FunctionComponent<PostsProps> = ({ posts }) => {
+const Posts: React.FunctionComponent<PostsProps> = ({
+  posts,
+  activeCategoryId,
+}) => {
   return (
     <div className="row">
       {posts.length === 0 ? (
         <div className="col-12 m-4">
-          <h5>No posts for this category...</h5>
+          {activeCategoryId != null ? (
+            <h5>No posts for this category...</h5>
+          ) : (
+            <h5>Welcome home</h5>
+          )}
         </div>
       ) : (
         posts.map((post) => (

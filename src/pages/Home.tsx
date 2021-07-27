@@ -18,6 +18,7 @@ export interface HomeProps
 const Home: React.FunctionComponent<HomeProps> = ({
   match,
   categories,
+  activeCategoryId,
   setActiveCategoryId,
 }) => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -55,7 +56,11 @@ const Home: React.FunctionComponent<HomeProps> = ({
 
   return (
     <>
-      {loading ? <Spinner /> : <Posts posts={posts} />}
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Posts posts={posts} activeCategoryId={activeCategoryId} />
+      )}
       {activePostId != null && activePost != null && (
         <PostModal post={activePost} setPosts={setPosts} />
       )}

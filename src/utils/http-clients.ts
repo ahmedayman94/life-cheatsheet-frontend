@@ -11,7 +11,7 @@ export function getCategories(): Promise<Category[]> {
 }
 
 export function getPostsForCategory(categoryId: number): Promise<Post[]> {
-    return delay(500).then(() => Promise.resolve(postsMock));
+    return delay(500).then(() => Promise.resolve(postsMock.filter(p => p.category === categoryId)));
 }
 
 export function createNewPostAsync(post: Post): Promise<Post> {

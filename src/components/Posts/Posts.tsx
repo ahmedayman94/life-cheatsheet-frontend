@@ -9,11 +9,17 @@ export interface PostsProps {
 const Posts: React.FunctionComponent<PostsProps> = ({ posts }) => {
   return (
     <div className="row">
-      {posts.map((post) => (
-        <div className="col-md-4 my-4" key={post.id}>
-          <Card key={post.id} post={post} />
+      {posts.length === 0 ? (
+        <div className="col-12 m-4">
+          <h5>No posts for this category...</h5>
         </div>
-      ))}
+      ) : (
+        posts.map((post) => (
+          <div className="col-md-4 my-4" key={post.id}>
+            <Card key={post.id} post={post} />
+          </div>
+        ))
+      )}
     </div>
   );
 };

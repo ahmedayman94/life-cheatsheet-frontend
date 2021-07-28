@@ -20,6 +20,7 @@ code {
   --bg-nav-color: #1d252d;
   --bg-sidenav-color: #1d252d;
   --font-color: #cddee9;
+  --box-shadow-focus: 0 0 0 0.2rem rgb(0 123 255 / 25%);
 }
 
 .light-theme {
@@ -31,4 +32,17 @@ code {
 #root {
   background-color: var(--bg-color);
   color: var(--font-color);
+}
+
+input {
+  border-radius: 5px;
+}
+
+input:-internal-autofill-selected {
+  background-color: var(--bg-nav-color) !important;
+}
+
+input:focus-visible {
+  box-shadow: var(--box-shadow-focus);
+  outline: none;
 }

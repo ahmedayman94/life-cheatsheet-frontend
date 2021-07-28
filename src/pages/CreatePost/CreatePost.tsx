@@ -1,10 +1,12 @@
 import { convertToRaw, Editor, EditorState } from "draft-js";
 import { useFormik } from "formik";
 import { useEffect } from "react";
-import { createNewPostAsync, getCategories } from "../utils/http-clients";
-import { Category } from "../interfaces/category.model";
-import { Post } from "../interfaces/post.model";
+import { createNewPostAsync, getCategories } from "../../utils/http-clients";
+import { Category } from "../../interfaces/category.model";
+import { Post } from "../../interfaces/post.model";
 import * as Yup from "yup";
+
+import "./CreatePost.css";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
@@ -63,7 +65,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
         onSubmit={formik.handleSubmit}
       >
         <div className="row flex-grow-0">
-          <div className="col-12 mt-5">
+          <div id="newPostTitle" className="col-12 mt-5">
             <h3 className="w-100">
               <input
                 id="postTitle"
@@ -78,12 +80,12 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
             </h3>
           </div>
         </div>
-        <div className="row flex-grow-0">
+        <div id="newPostCategory" className="row flex-grow-0 mt-3">
           <div className="col-12">
             <select
               className="form-control"
               name="postCategory"
-              id="postCategory"
+              id="postCategorySelect"
               onChange={formik.handleChange}
               value={formik.values.postCategory}
             >
@@ -98,8 +100,8 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
             </select>
           </div>
         </div>
-        <div className="row flex-grow-1">
-          <div className="col-12 p-4">
+        <div id="newPostContent" className="row no-gutters flex-grow-1 mt-3">
+          <div id="newPostContentContainer" className="col-12 p-3">
             <Editor
               placeholder="Add post content"
               editorState={formik.values.postEditorState}

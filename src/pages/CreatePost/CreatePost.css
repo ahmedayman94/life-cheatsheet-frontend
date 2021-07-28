@@ -1,0 +1,18 @@
+#newPostTitle {
+    color: var(--font-color);
+}
+
+#postCategorySelect {
+    background-color: var(--bg-nav-color);
+    color: var(--font-color);
+    border: none;
+}
+
+#newPostContentContainer {
+    background-color: var(--bg-nav-color);
+    border-radius: 5px;
+}
+
+#newPostContentContainer:focus-within {
+    box-shadow: var(--box-shadow-focus);
+}

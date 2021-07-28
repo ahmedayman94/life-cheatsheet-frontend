@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Category } from "./interfaces/category.model";
-import CreatePost from "./pages/CreatePost";
+import CreatePost from "./pages/CreatePost/CreatePost";
 import Home from "./pages/Home";
 import { getCategories } from "./utils/http-clients";
 import NotFound from "./pages/NotFound";

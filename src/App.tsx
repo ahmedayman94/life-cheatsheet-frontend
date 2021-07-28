@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AppContainer from "./AppContainer";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (

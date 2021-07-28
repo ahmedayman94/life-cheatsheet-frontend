@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import PostModal from "../components/PostModal/PostModal";
-import Posts from "../components/Posts/Posts";
-import Spinner from "../components/Spinner/Spinner";
-import { Category } from "../interfaces/category.model";
-import { Post } from "../interfaces/post.model";
-import { getPostsForCategory } from "../utils/http-clients";
+import PostModal from "../../components/PostModal/PostModal";
+import Posts from "../../components/Posts/Posts";
+import Spinner from "../../components/Spinner/Spinner";
+import { Category } from "../../interfaces/category.model";
+import { Post } from "../../interfaces/post.model";
+import { getPostsForCategory } from "../../utils/http-clients";
 
 export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {

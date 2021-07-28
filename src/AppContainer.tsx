@@ -4,11 +4,11 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Category } from "./interfaces/category.model";
 import CreatePost from "./pages/CreatePost/CreatePost";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import { getCategories } from "./utils/http-clients";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound/NotFound";
 
-import './AppContainer.css';
+import "./AppContainer.css";
 
 const AppContainer = () => {
   const [categories, setCategories] = useState<Category[]>([]);

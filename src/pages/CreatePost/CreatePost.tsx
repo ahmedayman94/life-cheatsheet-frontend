@@ -7,6 +7,7 @@ import { Post } from "../../interfaces/post.model";
 import * as Yup from "yup";
 
 import "./CreatePost.css";
+import { useHistory } from "react-router-dom";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
@@ -19,6 +20,8 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
   setCategories,
   setActiveCategoryId,
 }) => {
+  const history = useHistory();
+
   useEffect(() => {
     setActiveCategoryId(undefined);
 
@@ -42,21 +45,22 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
     validationSchema: Yup.object().shape({
       postTitle: Yup.string().min(3).required("Required"),
       postCategory: Yup.number().min(0),
-      postEditorState: Yup.object().test(
-        'has text',
-        (value: any) => value?.getCurrentContent().hasText()
-      )
+      postEditorState: Yup.object().test("has text", (value: any) =>
+        value?.getCurrentContent().hasText()
+      ),
     }),
     onSubmit: async (values) => {
       let newPost: Post = {
         title: values.postTitle,
-        category: values.postCategory,
+        category: +values.postCategory,
         content: JSON.stringify(
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
       };
 
       newPost = await createNewPostAsync(newPost);
+
+      history.push(`/categories/${newPost.category}/posts/${newPost.id}`);
     },
   });
 

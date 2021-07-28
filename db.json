@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "Git stash only staged changes",
+      "content": "{\"blocks\":[{\"key\":\"8mrv7\",\"text\":\"1. Run git add <files><to> <stage> \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"actj8\",\"text\":\"2. Run git stash push –keep-index\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "category": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Programming n stuff"
+    },
+    {
+      "id": 2,
+      "title": "Finance and banking"
+    },
+    {
+      "id": 3,
+      "title": "Random stuff"
+    }
+  ]
+}

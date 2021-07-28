@@ -16,14 +16,12 @@
 .modal-dialog, .modal-content {
     /* 80% of window height */
     height: 90%;
-    width: 100%;
 }
 
 .modal-body {
     /* 100% = dialog height, 120px = header + footer */
     max-height: calc(100% - 120px);
-    max-width: calc(100% - 120px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 @keyframes mymove {

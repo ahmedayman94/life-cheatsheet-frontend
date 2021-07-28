@@ -15,7 +15,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
     <nav className="side-bar position-fixed">
       <div className="mt-4 px-3">
         <div className="my-2 category-title">Categories</div>
-        <ul className="nav">
+        <ul className="nav flex-column">
           {categories.map((category) => (
             <li
               className={`my-2 nav-item${

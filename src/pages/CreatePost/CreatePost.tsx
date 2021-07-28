@@ -42,7 +42,10 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
     validationSchema: Yup.object().shape({
       postTitle: Yup.string().min(3).required("Required"),
       postCategory: Yup.number().min(0),
-      postEditorState: Yup.mixed().required("Required"),
+      postEditorState: Yup.object().test(
+        'has text',
+        (value: any) => value?.getCurrentContent().hasText()
+      )
     }),
     onSubmit: async (values) => {
       let newPost: Post = {
@@ -54,7 +57,6 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
       };
 
       newPost = await createNewPostAsync(newPost);
-      // setPosts((posts) => [...posts, newPost]);
     },
   });
 
@@ -71,7 +73,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
                 id="postTitle"
                 name="postTitle"
                 placeholder="Add title"
-                className="post-title w-100 p-2"
+                className="post-title w-100 px-3 py-2"
                 // style={{ border: "1px solid grey" }}
                 type="text"
                 onChange={formik.handleChange}
@@ -112,7 +114,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
           </div>
         </div>
 
-        <div className="row flex-grow-0">
+        <div className="row flex-grow-0 mt-4">
           <div className="col-12">
             <button
               type="submit"

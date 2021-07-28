@@ -5,6 +5,30 @@
       "title": "Git stash only staged changes",
       "content": "{\"blocks\":[{\"key\":\"8mrv7\",\"text\":\"1. Run git add <files><to> <stage> \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"actj8\",\"text\":\"2. Run git stash push –keep-index\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
       "category": 1
+    },
+    {
+      "title": "What is total return swap",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"5og2f\",\"text\":\"Total return swap, which is particularly famous among hedge funds, allow the investor exposure to assets without outright owning them. For example, a hedge fund could go into a swap agreement with a bank for a given stock whereby a fixed interest is paid to the bank by the hedge fund, and the hedge fund receives any dividends to those stocks, and pays the hedge fund if the stock price increases. The reverse is true, and this is marked to market meaning that cash flows continuously, therefore hedge funds have to put up margin. It is worth noting that those positions are highly leveraged, and banks typically hedge such deals by buying the underlying asset themselves.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9h1sj\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4t071\",\"text\":\"This kind of swap is OTC (over the counter) that does not require the investors to report it to the SEC.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6gb68\",\"text\":\"For banks, those kinds of synthetic deals are attractive as they have less regulatory capital requirements than traditional margin lending.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 3
+    },
+    {
+      "title": "What are derivatives",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"arhtb\",\"text\":\"Derivatives are financial securities whose value is derived from an underlying asset such as bonds and stocks. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"cehru\",\"text\":\"The main forms of derivatives are: Swaps, Futures and Options.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 4
+    },
+    {
+      "title": "What is interest rate swap",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"3l7c8\",\"text\":\"IRS is a way for business/institution to swap its loan terms usually from fixed to variable rate or vice versa.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9qam7\",\"text\":\"Why it’s used? It allows companies to revise their debt conditions and to take advantage of current or expected future market conditions. In addition, it allows companies to pay lower interest rates for their loans.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 5
+    },
+    {
+      "title": "How TIPS work",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"5niut\",\"text\":\"Stands for Treasury Inflation Protected Securities, you buy TIPS at a given face value and a given coupon which pays semi-annually the interest. Then, the face value adjusts annually based on the CPI (consumer price index). Based on the CPI % change, the face value increases or decreases in value.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"8jqhs\",\"text\":\"At maturity, you receive back your principal either at your original investment or the higher adjusted, but never lower than your original investment in case of deflation.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 6
     }
   ],
   "categories": [

@@ -20,9 +20,11 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
   const linkToPost = `/categories/${post.category}/posts/${post.id}`;
   return (
     <div className="card card-default">
-      <div className="card-body">
-        <h5 className="card-title">{post.title}</h5>
-        <span className="card-text">
+      <div className="card-body d-flex flex-column">
+        <div className="card-title">
+          <h5>{post.title}</h5>
+        </div>
+        <div className="card-text">
           {editorState != null && (
             <Editor
               readOnly
@@ -30,14 +32,12 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
               onChange={setEditorState}
             />
           )}
-        </span>
-        {post.id != null && (
-          <div>
-            <Link className="link d-flex flex-column" to={linkToPost}>
-              <button className="btn btn-secondary">Link to post</button>
-            </Link>
-          </div>
-        )}
+        </div>
+        <div className="mt-auto">
+          <Link className="link d-flex flex-column" to={linkToPost}>
+            <button className="btn btn-secondary">Link to post</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

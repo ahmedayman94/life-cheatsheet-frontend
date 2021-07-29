@@ -1,14 +1,18 @@
 .card-default {
     border-radius: 4%;
-    height: 190px;
+    height: 250px;
     width: 320px;
     overflow: hidden;
-    background-color: var(--bg-color);
-    border: 1px solid var(--font-color);
+    background-color: var(--bg-nav-color);
 }
 
 .card-text {
-    height: 80px;
     overflow: hidden;
     margin-bottom: 0px;
+    font-size: 0.9rem;
+    line-height: 1.1;
+}
+
+.card-text>* {
+    overflow: hidden;
 }

@@ -29,6 +29,24 @@
       "category": 2,
       "content": "{\"blocks\":[{\"key\":\"5niut\",\"text\":\"Stands for Treasury Inflation Protected Securities, you buy TIPS at a given face value and a given coupon which pays semi-annually the interest. Then, the face value adjusts annually based on the CPI (consumer price index). Based on the CPI % change, the face value increases or decreases in value.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"8jqhs\",\"text\":\"At maturity, you receive back your principal either at your original investment or the higher adjusted, but never lower than your original investment in case of deflation.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
       "id": 6
+    },
+    {
+      "id": 7,
+      "title": "Leverage Ratio",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"70ru1\",\"text\":\"Ratio of Debt to Capital.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":4,\"style\":\"BOLD\"},{\"offset\":17,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"8hh2a\",\"text\":\"E.g: A bank with 10m in capital, and a total of 100m in liabilities would have a leverage of 10x1\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "title": "Testing and TDD",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"4dhsq\",\"text\":\"Testing can fall into three main layers starting from the bottom up:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4am6\",\"text\":\"Unit testing: Testing a single function\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ahhc\",\"text\":\"Integration testing: Testing several functions or an entire feature (what I mostly do with Angular unit tests)\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9bc3q\",\"text\":\"End to end testing: Things like gui tests, done by frameworks such as selenium in python.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 8
+    },
+    {
+      "title": "When does React render",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"6vvgq\",\"text\":\"When state changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fiog\",\"text\":\"When prop changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6d5q1\",\"text\":\"When parent renders\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"amudg\",\"text\":\"When context changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 9
     }
   ],
   "categories": [

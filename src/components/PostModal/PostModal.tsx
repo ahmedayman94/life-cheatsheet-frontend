@@ -6,6 +6,7 @@ import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
 import { useState } from "react";
+import { editPostAsync } from "../../utils/http-clients";
 
 export interface PostModalProps {
   post: Post;
@@ -25,7 +26,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
         convertFromRaw(JSON.parse(post.content))
       ),
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const newPost: Post = {
         id: post.id,
         title: values.postTitle,
@@ -34,7 +35,9 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
       };
+      await editPostAsync(newPost);
       setPosts((posts) => posts.map((p) => (p.id === post.id ? newPost : p)));
+      setIsEditMode(false);
     },
   });
 
@@ -42,6 +45,11 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
     formik.setFieldValue("postEditorState", editorState);
 
   const match = useRouteMatch<{ categoryId: string }>();
+
+  const resetForm = () => {
+    formik.resetForm();
+    setIsEditMode(false);
+  };
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -102,14 +110,18 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
               </div>
               {isEditMode && (
                 <div>
-                  <button className="btn btn-primary" type="submit">
+                  <button
+                    className="btn btn-primary"
+                    type="submit"
+                    disabled={!formik.dirty || !formik.isValid}
+                  >
                     Save changes
                   </button>
 
                   <button
                     type="button"
                     className="btn btn-secondary ml-3"
-                    onClick={() => setIsEditMode(false)}
+                    onClick={resetForm}
                   >
                     Cancel
                   </button>

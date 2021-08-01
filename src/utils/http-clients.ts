@@ -29,6 +29,10 @@ export async function createNewPostAsync(post: Post): Promise<Post> {
   return Promise.resolve({ ...post, id: newPost.data.id });
 }
 
+export async function editPostAsync(post: Post): Promise<void> {
+  await axios.put(`${apiBaseUrl}/posts/${post.id}`, post);
+}
+
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

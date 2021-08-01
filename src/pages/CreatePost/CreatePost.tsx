@@ -6,8 +6,9 @@ import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
 import * as Yup from "yup";
 
-import "./CreatePost.css";
 import { useHistory } from "react-router-dom";
+import StyleOptions from "../../components/StyleOptions/StyleOptions";
+import "./CreatePost.css";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
@@ -72,13 +73,12 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
       >
         <div className="row flex-grow-0">
           <div id="newPostTitle" className="col-12 mt-5">
-            <h3 className="w-100">
+            <h3 className="w-100 mb-0">
               <input
                 id="postTitle"
                 name="postTitle"
                 placeholder="Add title"
                 className="post-title w-100 px-3 py-2"
-                // style={{ border: "1px solid grey" }}
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.postTitle}
@@ -108,12 +108,14 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
         </div>
         <div id="newPostContent" className="row no-gutters flex-grow-1 mt-3">
           <div id="newPostContentContainer" className="col-12 p-3">
+            <StyleOptions
+              postEditorState={formik.values.postEditorState}
+              onEditorChange={onEditorChange}
+            />
             <Editor
               placeholder="Add post content"
               editorState={formik.values.postEditorState}
-              onChange={(editorState) => {
-                onEditorChange(editorState);
-              }}
+              onChange={onEditorChange}
             />
           </div>
         </div>

@@ -1,0 +1,14 @@
+.style-type {
+    width: 20px;
+    height: 20px
+}
+
+.style-options {
+    border-bottom: 1px solid var(--font-color);
+}
+
+.style-options>* {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

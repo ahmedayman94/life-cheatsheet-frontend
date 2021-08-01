@@ -1,15 +1,10 @@
 import { Link, useRouteMatch } from "react-router-dom";
-import {
-  convertFromRaw,
-  convertToRaw,
-  Editor,
-  EditorState,
-  RichUtils,
-} from "draft-js";
+import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
 import { Post } from "../../interfaces/post.model";
 import "./PostModal.css";
 import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
+import StyleOptions from "../StyleOptions/StyleOptions";
 
 export interface PostModalProps {
   post: Post;
@@ -45,29 +40,8 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
 
   const match = useRouteMatch<{ categoryId: string }>();
 
-  function _onBoldClick() {
-    const newState = RichUtils.toggleInlineStyle(
-      formik.values.postEditorState,
-      "BOLD"
-    );
-    onEditorChange(newState);
-  }
-  function onCodeClick() {
-    const newState = RichUtils.toggleInlineStyle(
-      formik.values.postEditorState,
-      "CODE"
-    );
-    onEditorChange(newState);
-  }
-
   return (
     <form onSubmit={formik.handleSubmit}>
-      {/* <div
-        className="modal fade show d-block"
-        tabIndex={-1}
-        role="dialog"
-        aria-hidden={true}
-      > */}
       <div
         className="modal fade show d-block"
         id="exampleModal"
@@ -88,27 +62,15 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
                   value={formik.values.postTitle}
                 />
               </h4>
-              {/* <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span className="closeModal" aria-hidden="true">&times;</span>
-              </button> */}
             </div>
             <div className="modal-body">
-              <button type="button" onClick={_onBoldClick}>
-                Bold
-              </button>
-              <button type="button" onClick={onCodeClick}>
-                Code
-              </button>
+              <StyleOptions
+                postEditorState={formik.values.postEditorState}
+                onEditorChange={onEditorChange}
+              />
               <Editor
                 editorState={formik.values.postEditorState}
-                onChange={(editorState) => {
-                  onEditorChange(editorState);
-                }}
+                onChange={onEditorChange}
               />
             </div>
             <div className="modal-footer">

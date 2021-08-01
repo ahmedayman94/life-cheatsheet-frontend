@@ -1,7 +1,6 @@
 .card-default {
     border-radius: 4%;
     height: 250px;
-    width: 320px;
     overflow: hidden;
     background-color: var(--bg-nav-color);
 }

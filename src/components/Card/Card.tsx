@@ -20,7 +20,7 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
 
   const linkToPost = `/categories/${post.category}/posts/${post.id}`;
   return (
-    <div className="card card-default">
+    <div className="card card-default w-100">
       <div className="card-body d-flex flex-column">
         <div className="card-title">
           <h5>{post.title}</h5>

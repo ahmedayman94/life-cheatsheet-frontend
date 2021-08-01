@@ -77,7 +77,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
                 />
               </h4>
             </div>
-            <div className="modalBody mx-1 px-1">
+            <div className="modalBody mx-1 mb-3 px-1">
               <div
                 className={`postContentContainer postEditorContainer mx-2 p-3${
                   isEditMode ? " editMode" : ""
@@ -101,7 +101,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
                 {!isEditMode && (
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-secondary ml-3"
                     onClick={() => setIsEditMode(true)}
                   >
                     Edit

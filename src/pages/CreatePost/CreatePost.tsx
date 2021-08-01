@@ -107,7 +107,10 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
           </div>
         </div>
         <div id="newPostContent" className="row no-gutters flex-grow-1 mt-3">
-          <div id="newPostContentContainer" className="col-12 p-3">
+          <div
+            id="newPostContentContainer"
+            className="col-12 p-3 postEditorContainer"
+          >
             <StyleOptions
               postEditorState={formik.values.postEditorState}
               onEditorChange={onEditorChange}

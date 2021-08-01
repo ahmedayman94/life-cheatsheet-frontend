@@ -5,6 +5,7 @@ import "./PostModal.css";
 import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
+import { useState } from "react";
 
 export interface PostModalProps {
   post: Post;
@@ -16,6 +17,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
   setPosts,
 }) => {
   const history = useHistory();
+  const [isEditMode, setIsEditMode] = useState(false);
   const formik = useFormik({
     initialValues: {
       postTitle: post.title,
@@ -52,42 +54,79 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
       >
         <div className="modal-dialog" role="document">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modalHeader m-2 p-2">
               <h4 className="modal-title w-100">
                 <input
                   id="postTitle"
                   name="postTitle"
-                  className="post-title w-100"
+                  className={`post-title w-100 px-3 py-2 ${
+                    isEditMode ? "editMode" : ""
+                  }`}
                   type="text"
                   onChange={formik.handleChange}
                   value={formik.values.postTitle}
+                  readOnly={!isEditMode}
                 />
               </h4>
             </div>
-            <div className="modal-body">
-              <StyleOptions
-                postEditorState={formik.values.postEditorState}
-                onEditorChange={onEditorChange}
-              />
-              <Editor
-                editorState={formik.values.postEditorState}
-                onChange={onEditorChange}
-              />
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-                onClick={() =>
-                  history.push(`/categories/${match.params.categoryId}`)
-                }
+            <div className="modalBody mx-1 px-1">
+              <div
+                className={`postContentContainer postEditorContainer mx-2 p-3${
+                  isEditMode ? " editMode" : ""
+                }`}
               >
-                Close
-              </button>
-              <button className="btn btn-primary" type="submit">
-                Save changes
-              </button>
+                {isEditMode && (
+                  <StyleOptions
+                    postEditorState={formik.values.postEditorState}
+                    onEditorChange={onEditorChange}
+                  />
+                )}
+                <Editor
+                  editorState={formik.values.postEditorState}
+                  onChange={onEditorChange}
+                  readOnly={!isEditMode}
+                />
+              </div>
+            </div>
+            <div className="modalActions mt-auto p-3 d-flex">
+              <div>
+                {!isEditMode && (
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => setIsEditMode(true)}
+                  >
+                    Edit
+                  </button>
+                )}
+              </div>
+              {isEditMode && (
+                <div>
+                  <button className="btn btn-primary" type="submit">
+                    Save changes
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-secondary ml-3"
+                    onClick={() => setIsEditMode(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
+              <div className="ml-auto">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                  onClick={() =>
+                    history.push(`/categories/${match.params.categoryId}`)
+                  }
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>

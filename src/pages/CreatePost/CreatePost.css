@@ -10,7 +10,6 @@
 
 #newPostContentContainer {
     background-color: var(--bg-nav-color);
-    border-radius: 5px;
 }
 
 #newPostContentContainer:focus-within {

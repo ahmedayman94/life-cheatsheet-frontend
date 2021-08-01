@@ -2,15 +2,23 @@
     font-weight: bold;
     border: none;
     color: var(--font-color);
-    background-color: var(--bg-sidenav-color);
+    background-color: var(--bg-color);
+}
+
+.modal-dialog {
+    max-width: 70vw !important;
 }
 
 .modal-content {
-    background-color: var(--bg-sidenav-color);
+    background-color: var(--bg-color);
 }
 
 .modal {
     animation: 200ms mymove forwards;
+}
+
+.modalActions {
+    border-top: 1px solid var(--font-color);
 }
 
 .modal-dialog, .modal-content {
@@ -18,7 +26,7 @@
     height: 90%;
 }
 
-.modal-body {
+.modalBody {
     /* 100% = dialog height, 120px = header + footer */
     max-height: calc(100% - 120px);
     overflow-y: auto;
@@ -40,4 +48,8 @@
     100% {
         background-color: rgba(255, 255, 255, 0.5);
     }
+}
+
+.editMode {
+    background-color: var(--bg-nav-color)
 }

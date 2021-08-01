@@ -1,6 +1,6 @@
 import { convertFromRaw, Editor, EditorState } from "draft-js";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Post } from "../../interfaces/post.model";
 
 import "./Card.css";
@@ -9,6 +9,7 @@ export interface CardProps {
 }
 
 const Card: React.FunctionComponent<CardProps> = ({ post }) => {
+  const history = useHistory();
   const [editorState, setEditorState] = useState<EditorState>();
 
   useEffect(() => {
@@ -34,9 +35,12 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
           )}
         </div>
         <div className="mt-auto">
-          <Link className="link d-flex flex-column" to={linkToPost}>
-            <button className="btn btn-secondary">Link to post</button>
-          </Link>
+          <button
+            onClick={() => history.push(linkToPost)}
+            className="btn btn-secondary w-100"
+          >
+            Show
+          </button>
         </div>
       </div>
     </div>

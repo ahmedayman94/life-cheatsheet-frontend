@@ -1,4 +1,4 @@
-import { Link, useRouteMatch } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
 import { Post } from "../../interfaces/post.model";
 import "./PostModal.css";
@@ -15,6 +15,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
   post,
   setPosts,
 }) => {
+  const history = useHistory();
   const formik = useFormik({
     initialValues: {
       postTitle: post.title,
@@ -74,18 +75,16 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
               />
             </div>
             <div className="modal-footer">
-              <Link
-                className="link"
-                to={`/categories/${match.params.categoryId}`}
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+                onClick={() =>
+                  history.push(`/categories/${match.params.categoryId}`)
+                }
               >
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-              </Link>
+                Close
+              </button>
               <button className="btn btn-primary" type="submit">
                 Save changes
               </button>

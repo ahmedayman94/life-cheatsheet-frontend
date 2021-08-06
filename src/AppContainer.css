@@ -1,4 +1,27 @@
 main {
     height: calc(100vh - 56px);
     min-height: 300px;
+    margin-top: 56px;
+}
+
+.createPostClipboardPlus {
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 772px) {
+    main {
+        padding-left: 15%;
+    }
+}
+
+@media (max-width: 506px) {
+    main {
+        margin-top: 94px;
+    }
+    .newPost {
+        display: none;
+    }
+    .createPostClipboardPlus {
+        margin-right: 0px !important;
+    }
 }

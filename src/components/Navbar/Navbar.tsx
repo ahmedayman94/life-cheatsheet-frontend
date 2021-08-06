@@ -21,7 +21,7 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
+        {/* <ul className="navbar-nav">
           <li className={`nav-item ${pathName === "/" ? "active" : null}`}>
             <Link className="nav-link" to="/">
               Home
@@ -36,14 +36,14 @@ const Navbar = () => {
               Categories
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="ml-auto">
         <Link to="/create-post" className="btn btn-light mx-4">
-          <span className="mr-2">
+          <span className="createPostClipboardPlus">
             <ClipboardPlus style={{ fontSize: "1.2rem" }} />
           </span>
-          <span>New Post</span>
+          <span className="newPost">New Post</span>
         </Link>
         <button className="btn btn-dark">Login</button>
       </div>

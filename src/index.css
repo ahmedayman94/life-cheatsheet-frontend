@@ -24,12 +24,6 @@ body {
   --font-color: #000;
 }
 
-@media (min-width: 991.98px) {
-  main {
-    padding-left: 15%;
-  }
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

@@ -28,7 +28,7 @@ const AppContainer = () => {
     <>
       <Navbar />
       <Sidebar activeCategoryId={activeCategoryId} categories={categories} />
-      <main style={{ marginTop: "56px" }}>
+      <main>
         <div className="px-5 py-2 h-100">
           <Switch>
             <Route

@@ -7,6 +7,7 @@
 
 .modal-dialog {
     max-width: 70vw !important;
+    min-width: 350px;
 }
 
 .modal-content {

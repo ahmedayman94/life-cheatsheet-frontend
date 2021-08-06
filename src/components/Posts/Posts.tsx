@@ -23,7 +23,7 @@ const Posts: React.FunctionComponent<PostsProps> = ({
         </div>
       ) : (
         posts.map((post) => (
-          <div className="col-md-4 my-4" key={post.id}>
+          <div className="col-md-4 col-sm-6 my-4" key={post.id}>
             <Card key={post.id} post={post} />
           </div>
         ))

@@ -37,16 +37,28 @@
       "content": "{\"blocks\":[{\"key\":\"70ru1\",\"text\":\"Ratio of Debt to Capital.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":4,\"style\":\"BOLD\"},{\"offset\":17,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"8hh2a\",\"text\":\"E.g: A bank with 10m in capital, and a total of 100m in liabilities would have a leverage of 10x1\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     },
     {
+      "id": 8,
       "title": "Testing and TDD",
       "category": 1,
-      "content": "{\"blocks\":[{\"key\":\"4dhsq\",\"text\":\"Testing can fall into three main layers starting from the bottom up:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4am6\",\"text\":\"Unit testing: Testing a single function\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ahhc\",\"text\":\"Integration testing: Testing several functions or an entire feature (what I mostly do with Angular unit tests)\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9bc3q\",\"text\":\"End to end testing: Things like gui tests, done by frameworks such as selenium in python.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
-      "id": 8
+      "content": "{\"blocks\":[{\"key\":\"4dhsq\",\"text\":\"Testing can fall into three main layers starting from the bottom up:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4am6\",\"text\":\"Unit testing: Testing a single function\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ahhc\",\"text\":\"Integration testing: Testing several functions or an entire feature (what I mostly do with Angular tests)\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9bc3q\",\"text\":\"End to end testing: Things like gui tests, done by frameworks such as selenium in python.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     },
     {
       "title": "When does React render",
       "category": 1,
       "content": "{\"blocks\":[{\"key\":\"6vvgq\",\"text\":\"When state changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fiog\",\"text\":\"When prop changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6d5q1\",\"text\":\"When parent renders\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"amudg\",\"text\":\"When context changes\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
       "id": 9
+    },
+    {
+      "id": 10,
+      "title": "Supplemental Leverage Ratio (SLR)",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"54han\",\"text\":\"Ratio of capital to total assets. It is required by banks to have a 3% (or 5% in large institutions).\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":7,\"style\":\"BOLD\"},{\"offset\":20,\"length\":12,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"drjf1\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"176gl\",\"text\":\"During the covid crisis, regulation for this ratio was modified to exclude from its assets calculation reserves and treasuries.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "id": 11,
+      "title": "Liquidity Coverage Ratio (LCR)",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"5sldg\",\"text\":\"LCR is a regulatory requirement that was introduced under Basel III after the global financial crisis. It aims to have banks hold High Quality Liquid Assets (HQLA) in order to meet outgoing payments within a 30-day timeframe. The ratio acts as a stress-test metric to ensure that banks have sufficient liquidity.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fvn4r\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"lold\",\"text\":\"LCR = HQLA / net cash flow in 30 days\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     }
   ],
   "categories": [

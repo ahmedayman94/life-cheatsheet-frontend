@@ -4,7 +4,7 @@
       "id": 2,
       "title": "Git stash only staged changes",
       "category": 1,
-      "content": "{\"blocks\":[{\"key\":\"8mrv7\",\"text\":\"Run git add <files><to> <stage>\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9svca\",\"text\":\"Run git stash push –keep-index\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+      "content": "{\"blocks\":[{\"key\":\"8mrv7\",\"text\":\"git add <files><to> <stage>\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":27,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9svca\",\"text\":\"git stash push –keep-index\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":26,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     },
     {
       "id": 3,
@@ -59,6 +59,12 @@
       "title": "Liquidity Coverage Ratio (LCR)",
       "category": 2,
       "content": "{\"blocks\":[{\"key\":\"5sldg\",\"text\":\"LCR is a regulatory requirement that was introduced under Basel III after the global financial crisis. It aims to have banks hold High Quality Liquid Assets (HQLA) in order to meet outgoing payments within a 30-day timeframe. The ratio acts as a stress-test metric to ensure that banks have sufficient liquidity.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fvn4r\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"lold\",\"text\":\"LCR = HQLA / net cash flow in 30 days\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "id": 12,
+      "title": "Find all devices on network",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"1f48q\",\"text\":\"in command line: arp -a\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":17,\"length\":6,\"style\":\"BOLD\"},{\"offset\":17,\"length\":6,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     }
   ],
   "categories": [

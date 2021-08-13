@@ -17,6 +17,11 @@ const StyleOptions: React.FunctionComponent<StyleOptionsProps> = ({
     onEditorChange(newState);
   }
 
+  function _onCodeBlockClick() {
+    const newState = RichUtils.toggleInlineStyle(postEditorState, "CODE");
+    onEditorChange(newState);
+  }
+
   function _onOlListClick() {
     const newState = RichUtils.toggleBlockType(
       postEditorState,
@@ -27,7 +32,7 @@ const StyleOptions: React.FunctionComponent<StyleOptionsProps> = ({
   return (
     <div className="style-options pb-2 mb-3">
       <TypeBold className="mx-3 style-type" onClick={_onBoldClick} />
-      <CodeSquare className="mx-3 style-type" />
+      <CodeSquare className="mx-3 style-type" onClick={_onCodeBlockClick} />
       <ListOl className="mx-3" onClick={_onOlListClick} />
       <ListUl className="mx-3" />
     </div>

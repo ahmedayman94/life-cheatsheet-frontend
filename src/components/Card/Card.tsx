@@ -15,7 +15,6 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
   useEffect(() => {
     const content = convertFromRaw(JSON.parse(post.content));
     setEditorState(EditorState.createWithContent(content));
-    return () => {};
   }, [post]);
 
   const linkToPost = `/categories/${post.category}/posts/${post.id}`;

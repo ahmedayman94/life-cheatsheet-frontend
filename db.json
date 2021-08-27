@@ -65,6 +65,18 @@
       "title": "Find all devices on network",
       "category": 1,
       "content": "{\"blocks\":[{\"key\":\"1f48q\",\"text\":\"in command line: arp -a\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":17,\"length\":6,\"style\":\"BOLD\"},{\"offset\":17,\"length\":6,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "title": "What is closure in Javascript",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"28jjb\",\"text\":\"Closures are functions that are bundled together with variables in its lexical scope (lexical scope is anything between curly brackets).\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2d3u0\",\"text\":\"With this, an inner function can access variables declared in the outer function (but not the other way around) and this is because Javascript will store a reference of this variable in the heap so that it is accessible when the inner function is executed.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 13
+    },
+    {
+      "title": "What is Money Market",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"8p0n\",\"text\":\"It is the market that deals with short-term debt, usually less than a year.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4nt0h\",\"text\":\"Examples of money market instruments are: treasury bills, repo, commercial paper, asset backed securities\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 14
     }
   ],
   "categories": [

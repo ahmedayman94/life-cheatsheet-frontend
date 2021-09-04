@@ -6,7 +6,7 @@ import postsMock from "../mock-data/posts.json";
 
 const apiBaseUrl = process.env.REACT_APP_API_URL;
 
-export function getCategories(): Promise<Category[]> {
+export function fetchCategoriesAsync(): Promise<Category[]> {
   return axios
     .get<Category[]>(`${apiBaseUrl}/categories`)
     .then((res) => res.data);

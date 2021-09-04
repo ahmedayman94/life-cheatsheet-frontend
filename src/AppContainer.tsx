@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { Category } from "./interfaces/category.model";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Home from "./pages/Home/Home";
-import { getCategories } from "./utils/http-clients";
+import { fetchCategoriesAsync } from "./utils/http-clients";
 import NotFound from "./pages/NotFound/NotFound";
 
 import "./AppContainer.css";
@@ -15,7 +15,7 @@ const AppContainer = () => {
   const [activeCategoryId, setActiveCategoryId] = useState<number>();
 
   useEffect(() => {
-    getCategories()
+    fetchCategoriesAsync()
       .then((res) => {
         console.log("getCategories", res);
         setCategories(res);

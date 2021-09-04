@@ -13,7 +13,7 @@ export function fetchCategoriesAsync(): Promise<Category[]> {
   // return Promise.resolve(categoriesMock);
 }
 
-export function getPostsForCategory(categoryId: number): Promise<Post[]> {
+export function fetchPostsForCategory(categoryId: number): Promise<Post[]> {
   return axios
     .get<Post[]>(`${apiBaseUrl}/posts`)
     .then((res) => res.data)

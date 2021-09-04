@@ -5,7 +5,7 @@ import Posts from "../../components/Posts/Posts";
 import Spinner from "../../components/Spinner/Spinner";
 import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
-import { getPostsForCategory } from "../../utils/http-clients";
+import { fetchPostsForCategory } from "../../utils/http-clients";
 
 export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {
@@ -35,7 +35,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
 
       if (activeCategoryId) {
         setLoading(true);
-        const posts = await getPostsForCategory(activeCategoryId);
+        const posts = await fetchPostsForCategory(activeCategoryId);
         setPosts(posts);
       } else setPosts([]);
 

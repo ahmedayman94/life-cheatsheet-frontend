@@ -5,7 +5,7 @@ import "./PostModal.css";
 import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { editPostAsync } from "../../utils/http-clients";
 
 export interface PostModalProps {
@@ -41,6 +41,20 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
     },
   });
 
+  useEffect(() => {
+    const callback = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        history.push(`/categories/${match.params.categoryId}`);
+      }
+    };
+
+    document.addEventListener("keydown", callback);
+
+    return () => {
+      document.removeEventListener("keydown", callback);
+    };
+  }, []);
+
   const onEditorChange = (editorState: EditorState) =>
     formik.setFieldValue("postEditorState", editorState);
 
@@ -57,6 +71,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
         className="modal fade show d-block"
         id="exampleModal"
         tabIndex={-1}
+        data-keyboard={true}
         role="dialog"
         aria-labelledby="exampleModalLabel"
       >

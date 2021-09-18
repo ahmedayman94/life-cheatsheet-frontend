@@ -19,10 +19,10 @@
       "id": 4
     },
     {
-      "title": "What is interest rate swap",
+      "id": 5,
+      "title": "What is Interest Rate Swap",
       "category": 2,
-      "content": "{\"blocks\":[{\"key\":\"3l7c8\",\"text\":\"IRS is a way for business/institution to swap its loan terms usually from fixed to variable rate or vice versa.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9qam7\",\"text\":\"Why it’s used? It allows companies to revise their debt conditions and to take advantage of current or expected future market conditions. In addition, it allows companies to pay lower interest rates for their loans.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
-      "id": 5
+      "content": "{\"blocks\":[{\"key\":\"3l7c8\",\"text\":\"IRS is a way for business/institution to swap its loan terms usually from fixed to variable rate or vice versa.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9qam7\",\"text\":\"Why it’s used? It allows companies to revise their debt conditions and to take advantage of current or expected future market conditions. In addition, it allows companies to pay lower interest rates for their loans.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     },
     {
       "title": "How TIPS work",
@@ -77,6 +77,42 @@
       "category": 2,
       "content": "{\"blocks\":[{\"key\":\"8p0n\",\"text\":\"It is the market that deals with short-term debt, usually less than a year.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4nt0h\",\"text\":\"Examples of money market instruments are: treasury bills, repo, commercial paper, asset backed securities\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
       "id": 14
+    },
+    {
+      "id": 15,
+      "title": "Shell find and replace (sed)",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"6qde4\",\"text\":\"To find and replace '_' with '-'\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"al6ht\",\"text\":\"echo “Hello_World” | sed ‘s/_/-/g’\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":34,\"style\":\"BOLD\"},{\"offset\":0,\"length\":34,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"ab7rh\",\"text\":\"Where s indicates find and replace\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dbd5f\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2tk5h\",\"text\":\"Find and replace in file: sed ‘s/word1/word2/g’ input.txt\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":26,\"length\":31,\"style\":\"BOLD\"},{\"offset\":26,\"length\":31,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "id": 16,
+      "title": "Docker run container from image without stopping",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"ajdt6\",\"text\":\"If you try to run a container from an image, and that image does not persist (i.e a script that finishes), then the container will exit. It becomes impossible to bash into the container and check things out (version of node for e.g).\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"567mo\",\"text\":\"To remedy that, and keep the container running, do the following:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"c33qi\",\"text\":\"docker run -t -d <image-id>\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":27,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"aner1\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1rfep\",\"text\":\"To bash directly into the image container:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"5e5do\",\"text\":\"docker run -it <image-id> bash\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":30,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"6kg1j\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+    },
+    {
+      "title": "Node command to get package name and version",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"9c2fc\",\"text\":\"Package version: node -pe “require(‘./package.json’).version”\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":17,\"length\":44,\"style\":\"BOLD\"},{\"offset\":17,\"length\":44,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"doe60\",\"text\":\"Where -p print, -e evalute. -pe print evaluate\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 17
+    },
+    {
+      "title": "Minsky's famous classification for firm financing",
+      "category": 2,
+      "content": "{\"blocks\":[{\"key\":\"ecdkp\",\"text\":\"The categorizations are: Hedging, Speculative and Ponzi\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"f6d3t\",\"text\":\"Hedging: A firm achieves \\\"hedging\\\" when it can pay down its interest on its debt and has remaining cash flow to pay down the principal, therefore the debt level falls with time.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"flvnn\",\"text\":\"Speculative: A firm achieves this when it generates enough cash flow to only pay down the interest payments, but the principal debt has to be rolled over, therefore the debt level stays the same.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1cjef\",\"text\":\"Ponzi: A firm achieves this when it does not generate enough cash flow to pay down its interest or principal, and it needs to issue more debt to pay down its existing interest payments.\",\"type\":\"ordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 18
+    },
+    {
+      "title": "Angular local vs Global installation",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"7nnhg\",\"text\":\"You need to have angular installed globally to have access to commands that begin with: ng like ng build\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":88,\"length\":2,\"style\":\"CODE\"},{\"offset\":96,\"length\":8,\"style\":\"CODE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"a4n62\",\"text\":\"In addition, you also need to install angular locally in a project.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7161v\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4bbsh\",\"text\":\"The question is, which angular cli will be used when running a command?\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"c19gg\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bh2af\",\"text\":\"The answer is, it depends:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3pjl7\",\"text\":\"If you run it through a script inside package.json, then it will take the local version.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"b78tj\",\"text\":\"If you run it through the command line directly, then it will take the global version.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dr5u0\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 19
+    },
+    {
+      "title": "Binary Search Tree (BST)",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"16l7b\",\"text\":\"Binary tree which is very fast in lookup and inserting data.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bcl08\",\"text\":\"How it works?\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ohj\",\"text\":\"A node can have 0,1 or 2 children nodes, the rule is that the left child is smaller than the parent, the right child is greater than the parent.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+      "id": 20
     }
   ],
   "categories": [

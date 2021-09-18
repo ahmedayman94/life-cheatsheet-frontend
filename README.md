@@ -2,7 +2,7 @@
 
 It's a small project I am running mainly locally to keep tabs on things I learned, things that I keep googling again and again because I forget.
 
-It's also my way of venturing into the world of React given my experience only in Angular.
+It's also my way of venturing into the world of React.
 
 # How to run locally
 

@@ -113,6 +113,12 @@
       "category": 1,
       "content": "{\"blocks\":[{\"key\":\"16l7b\",\"text\":\"Binary tree which is very fast in lookup and inserting data.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bcl08\",\"text\":\"How it works?\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ohj\",\"text\":\"A node can have 0,1 or 2 children nodes, the rule is that the left child is smaller than the parent, the right child is greater than the parent.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
       "id": 20
+    },
+    {
+      "id": 21,
+      "title": "Javascript: Difference between tasks and microtasks",
+      "category": 1,
+      "content": "{\"blocks\":[{\"key\":\"94tkr\",\"text\":\"Tasks are callbacks like click event listeners and setTimeout whereas microtasks are usually Promise callbacks.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3of10\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"705p7\",\"text\":\"The difference is that no matter how big a task queue is, only one of those will be executed per iteration of the event loop.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"64jbm\",\"text\":\"The microtask queue on the other hand will be emptied out before proceeding to the next iteration of the event loop.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1ftgo\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4bvj5\",\"text\":\"This means that a task that keeps getting queued recursively and immediately will not affect the page whereas in the microtask case will result in a dead page.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
     }
   ],
   "categories": [

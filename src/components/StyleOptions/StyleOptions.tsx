@@ -12,17 +12,17 @@ const StyleOptions: React.FunctionComponent<StyleOptionsProps> = ({
   postEditorState,
   onEditorChange,
 }) => {
-  function _onBoldClick() {
+  function onBoldClick() {
     const newState = RichUtils.toggleInlineStyle(postEditorState, "BOLD");
     onEditorChange(newState);
   }
 
-  function _onCodeBlockClick() {
+  function onCodeBlockClick() {
     const newState = RichUtils.toggleInlineStyle(postEditorState, "CODE");
     onEditorChange(newState);
   }
 
-  function _onOlListClick() {
+  function onOlListClick() {
     const newState = RichUtils.toggleBlockType(
       postEditorState,
       "ordered-list-item"
@@ -31,9 +31,9 @@ const StyleOptions: React.FunctionComponent<StyleOptionsProps> = ({
   }
   return (
     <div className="style-options pb-2 mb-3">
-      <TypeBold className="mx-3 style-type" onClick={_onBoldClick} />
-      <CodeSquare className="mx-3 style-type" onClick={_onCodeBlockClick} />
-      <ListOl className="mx-3" onClick={_onOlListClick} />
+      <TypeBold className="mx-3 style-type" onClick={onBoldClick} />
+      <CodeSquare className="mx-3 style-type" onClick={onCodeBlockClick} />
+      <ListOl className="mx-3" onClick={onOlListClick} />
       <ListUl className="mx-3" />
     </div>
   );

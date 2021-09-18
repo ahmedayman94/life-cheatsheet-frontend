@@ -29,12 +29,21 @@ const StyleOptions: React.FunctionComponent<StyleOptionsProps> = ({
     );
     onEditorChange(newState);
   }
+
+  function onUlListClick() {
+    const newState = RichUtils.toggleBlockType(
+      postEditorState,
+      "unordered-list-item"
+    );
+    onEditorChange(newState);
+  }
+
   return (
     <div className="style-options pb-2 mb-3">
       <TypeBold className="mx-3 style-type" onClick={onBoldClick} />
       <CodeSquare className="mx-3 style-type" onClick={onCodeBlockClick} />
       <ListOl className="mx-3" onClick={onOlListClick} />
-      <ListUl className="mx-3" />
+      <ListUl className="mx-3" onClick={onUlListClick} />
     </div>
   );
 };

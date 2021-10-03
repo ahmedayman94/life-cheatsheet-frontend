@@ -15,9 +15,6 @@ main {
 }
 
 @media (max-width: 506px) {
-    main {
-        margin-top: 94px;
-    }
     .newPost {
         display: none;
     }

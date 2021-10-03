@@ -7,7 +7,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
       <Link className="navbar-brand ml-3" to="/">
-        Life Cheatsheet
+        <span className="d-none d-sm-block">Life Cheatsheet</span>
+        <span className="d-sm-none">LCC</span>
       </Link>
       <button
         className="navbar-toggler"

@@ -6,7 +6,7 @@ import postsMock from "../mock-data/posts.json";
 
 const apiBaseUrl = process.env.REACT_APP_API_URL;
 
-export function fetchCategoriesAsync(): Promise<Category[]> {
+export function fetchCategories(): Promise<Category[]> {
   return axios
     .get<Category[]>(`${apiBaseUrl}/categories`)
     .then((res) => res.data);
@@ -18,18 +18,15 @@ export function fetchPostsForCategory(categoryId: number): Promise<Post[]> {
     .get<Post[]>(`${apiBaseUrl}/posts`)
     .then((res) => res.data)
     .then((posts) => posts.filter((post) => post.category === categoryId));
-
-  return delay(500).then(() =>
-    Promise.resolve(postsMock.filter((p) => p.category === categoryId))
-  );
 }
 
-export async function createNewPostAsync(post: Post): Promise<Post> {
+export async function createNewPost(post: Post): Promise<Post> {
   const newPost = await axios.post(`${apiBaseUrl}/posts`, post);
-  return Promise.resolve({ ...post, id: newPost.data.id });
+
+  return { ...post, id: newPost.data.id };
 }
 
-export async function editPostAsync(post: Post): Promise<void> {
+export async function editPost(post: Post): Promise<void> {
   await axios.put(`${apiBaseUrl}/posts/${post.id}`, post);
 }
 

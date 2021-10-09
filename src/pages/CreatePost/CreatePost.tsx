@@ -1,10 +1,7 @@
 import { convertToRaw, Editor, EditorState } from "draft-js";
 import { useFormik } from "formik";
 import { useEffect } from "react";
-import {
-  createNewPostAsync,
-  fetchCategoriesAsync,
-} from "../../utils/http-clients";
+import { createNewPost, fetchCategories } from "../../utils/http-clients";
 import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
 import * as Yup from "yup";
@@ -29,7 +26,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
   useEffect(() => {
     setActiveCategoryId(undefined);
 
-    fetchCategoriesAsync()
+    fetchCategories()
       .then((res) => {
         setCategories(res);
       })
@@ -62,7 +59,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
         ),
       };
 
-      newPost = await createNewPostAsync(newPost);
+      newPost = await createNewPost(newPost);
 
       history.push(`/categories/${newPost.category}/posts/${newPost.id}`);
     },

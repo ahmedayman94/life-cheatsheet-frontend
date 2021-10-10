@@ -5,17 +5,17 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { Category } from "./interfaces/category.model";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Home from "./pages/Home/Home";
-import { fetchCategories } from "./utils/http-clients";
 import NotFound from "./pages/NotFound/NotFound";
 
 import "./AppContainer.css";
+import { fetchCategories as fetchAllCategories } from "./services/categories.service";
 
 const AppContainer = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number>();
 
   useEffect(() => {
-    fetchCategories()
+    fetchAllCategories()
       .then((res) => {
         console.log("getCategories", res);
         setCategories(res);

@@ -5,7 +5,7 @@ import Posts from "../../components/Posts/Posts";
 import Spinner from "../../components/Spinner/Spinner";
 import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
-import { fetchPostsForCategory } from "../../utils/http-clients";
+import { fetchPostsForCategory } from "../../services/posts.service";
 
 export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {

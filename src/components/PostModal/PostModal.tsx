@@ -6,7 +6,7 @@ import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
 import { useEffect, useState } from "react";
-import { editPost } from "../../utils/http-clients";
+import { editPost } from "../../services/posts.service";
 
 export interface PostModalProps {
   post: Post;

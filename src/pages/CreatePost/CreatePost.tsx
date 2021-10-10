@@ -1,7 +1,6 @@
 import { convertToRaw, Editor, EditorState } from "draft-js";
 import { useFormik } from "formik";
 import { useEffect } from "react";
-import { createNewPost, fetchCategories } from "../../utils/http-clients";
 import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
 import * as Yup from "yup";
@@ -9,6 +8,8 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import StyleOptions from "../../components/StyleOptions/StyleOptions";
 import "./CreatePost.css";
+import { createNewPost } from "../../services/posts.service";
+import { fetchCategories } from "../../services/categories.service";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;

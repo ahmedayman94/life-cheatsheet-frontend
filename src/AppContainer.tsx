@@ -8,14 +8,14 @@ import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 
 import "./AppContainer.css";
-import { fetchCategories as fetchAllCategories } from "./services/categories.service";
+import { CategoriesService } from "./services/categories.service";
 
 const AppContainer = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number>();
 
   useEffect(() => {
-    fetchAllCategories()
+    CategoriesService.fetchAllCategories()
       .then((res) => {
         console.log("getCategories", res);
         setCategories(res);

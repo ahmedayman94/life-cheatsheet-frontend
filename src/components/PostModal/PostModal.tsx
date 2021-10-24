@@ -6,7 +6,7 @@ import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
 import { useEffect, useState } from "react";
-import { editPost } from "../../services/posts.service";
+import { PostsService } from "../../services/posts.service";
 
 export interface PostModalProps {
   post: Post;
@@ -35,7 +35,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
       };
-      await editPost(newPost);
+      await PostsService.editPost(newPost);
       setPosts((posts) => posts.map((p) => (p.id === post.id ? newPost : p)));
       setIsEditMode(false);
     },

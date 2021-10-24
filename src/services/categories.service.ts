@@ -4,9 +4,13 @@ import { Category } from "../interfaces/category.model";
 
 const apiBaseUrl = process.env.REACT_APP_API_URL;
 
-export function fetchCategories(): Promise<Category[]> {
+function fetchAllCategories(): Promise<Category[]> {
     return axios
         .get<Category[]>(`${apiBaseUrl}/categories`)
         .then((res) => res.data);
     // return Promise.resolve(categoriesMock);
 }
+
+export const CategoriesService = {
+    fetchAllCategories,
+};

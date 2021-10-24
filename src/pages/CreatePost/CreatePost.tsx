@@ -8,8 +8,8 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import StyleOptions from "../../components/StyleOptions/StyleOptions";
 import "./CreatePost.css";
-import { createNewPost } from "../../services/posts.service";
-import { fetchCategories } from "../../services/categories.service";
+import { PostsService } from "../../services/posts.service";
+import { CategoriesService } from "../../services/categories.service";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
@@ -27,7 +27,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
   useEffect(() => {
     setActiveCategoryId(undefined);
 
-    fetchCategories()
+    CategoriesService.fetchAllCategories()
       .then((res) => {
         setCategories(res);
       })
@@ -60,7 +60,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
         ),
       };
 
-      newPost = await createNewPost(newPost);
+      newPost = await PostsService.createNewPost(newPost);
 
       history.push(`/categories/${newPost.category}/posts/${newPost.id}`);
     },

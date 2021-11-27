@@ -57,7 +57,7 @@ const AppContainer = () => {
               )}
               exact
             />
-            <Route path="/" component={NotFound} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </main>

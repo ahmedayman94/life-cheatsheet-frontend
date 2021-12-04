@@ -46,7 +46,9 @@ const Navbar = () => {
           </span>
           <span className="newPost">New Post</span>
         </Link>
-        <button className="btn btn-dark">Login</button>
+        <Link to="/login" className="btn btn-dark">
+          Login
+        </Link>
       </div>
     </nav>
   );

@@ -8,14 +8,16 @@ import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 
 import "./AppContainer.css";
-import { CategoriesService } from "./services/categories.service";
+import categoriesService from "./services/categories.service";
 
 const AppContainer = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number>();
 
   useEffect(() => {
-    CategoriesService.fetchAllCategories()
+    categoriesService.fetchRandom();
+    categoriesService
+      .fetchAllCategories()
       .then((res) => {
         console.log("getCategories", res);
         setCategories(res);

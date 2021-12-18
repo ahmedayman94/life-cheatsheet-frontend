@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import StyleOptions from "../../components/StyleOptions/StyleOptions";
 import "./CreatePost.css";
 import { PostsService } from "../../services/posts.service";
-import { CategoriesService } from "../../services/categories.service";
+import categoriesService from "../../services/categories.service";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
@@ -27,7 +27,8 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
   useEffect(() => {
     setActiveCategoryId(undefined);
 
-    CategoriesService.fetchAllCategories()
+    categoriesService
+      .fetchAllCategories()
       .then((res) => {
         setCategories(res);
       })

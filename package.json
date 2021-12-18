@@ -55,5 +55,6 @@
     "@types/react-router-dom": "^5.1.7",
     "eslint": "^7.31.0",
     "json-server": "^0.16.3"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

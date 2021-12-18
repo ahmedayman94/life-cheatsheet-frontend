@@ -4,7 +4,7 @@
     left: 0;
     color: var(--font-color);
     background-color: var(--bg-sidenav-color);
-    width: 15%;
+    width: var(--sidebar-width);
     margin-top: 56px;
 }
 

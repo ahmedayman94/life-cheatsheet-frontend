@@ -6,7 +6,7 @@ const Navbar = () => {
   const pathName = useLocation()?.pathname;
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
-      <Link className="navbar-brand ml-3" to="/">
+      <Link className="navbar-brand ml-3 brand" to="/">
         <span className="d-none d-sm-block">Life Cheatsheet</span>
         <span className="d-sm-none">LCC</span>
       </Link>

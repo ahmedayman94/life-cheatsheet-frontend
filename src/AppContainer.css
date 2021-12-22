@@ -10,7 +10,7 @@ main {
 
 @media (min-width: 772px) {
     main {
-        padding-left: 15%;
+        padding-left: var(--sidebar-width);
     }
 }
 

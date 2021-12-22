@@ -3,6 +3,11 @@
     color: var(--font-color);
 }
 
+nav > .brand {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.5rem;
+}
+
 a {
     color: var(--font-color);
     font-weight: bold;

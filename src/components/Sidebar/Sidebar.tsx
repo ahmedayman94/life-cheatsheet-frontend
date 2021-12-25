@@ -13,14 +13,13 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
 }) => {
   return (
     <nav className="side-bar position-fixed">
-      <div className="mt-4 px-3">
+      <div className="mt-4 px-3 pl-4">
         <div className="my-2 category-title h5">Categories</div>
         <ul className="nav flex-column">
           {categories.map((category) => (
             <li
-              className={`my-2 nav-item${
-                category.id === activeCategoryId ? " active" : ""
-              }`}
+              className={`my-2 nav-item${category.id === activeCategoryId ? " active" : ""
+                }`}
               key={category.id}
             >
               <Link

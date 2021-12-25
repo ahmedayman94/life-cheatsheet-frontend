@@ -1,12 +1,18 @@
-import { Link, useLocation } from "react-router-dom";
-import { ClipboardPlus } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { UserInfoState } from "../../interfaces/user.model";
+import NavbarActions from "../NavbarActions/NavbarActions";
 
-const Navbar = () => {
-  const pathName = useLocation()?.pathname;
+interface NavbarProps {
+  userInfoState: UserInfoState;
+  loginClicked: () => void;
+  logoutClicked: () => void;
+}
+
+const Navbar: React.FunctionComponent<NavbarProps> = ({ userInfoState, loginClicked, logoutClicked }) => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top">
-      <Link className="navbar-brand ml-3 brand" to="/">
+    <nav className="navbar navbar-expand-lg fixed-top pl-4">
+      <Link className="navbar-brand brand" to="/">
         <span className="d-none d-sm-block">Life Cheatsheet</span>
         <span className="d-sm-none">LCC</span>
       </Link>
@@ -21,34 +27,8 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        {/* <ul className="navbar-nav">
-          <li className={`nav-item ${pathName === "/" ? "active" : null}`}>
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-          </li>
-          <li
-            className={`nav-item ${
-              pathName === "/categories" ? "active" : null
-            }`}
-          >
-            <Link className="nav-link" to="/categories">
-              Categories
-            </Link>
-          </li>
-        </ul> */}
-      </div>
-      <div className="ml-auto">
-        <Link to="/create-post" className="btn btn-light mx-4">
-          <span className="createPostClipboardPlus">
-            <ClipboardPlus style={{ fontSize: "1.2rem" }} />
-          </span>
-          <span className="newPost">New Post</span>
-        </Link>
-        <Link to="/login" className="btn btn-dark">
-          Login
-        </Link>
+      <div className="ml-auto mr-2">
+        <NavbarActions loginClicked={loginClicked} logoutClicked={logoutClicked} userInfoState={userInfoState} />
       </div>
     </nav>
   );

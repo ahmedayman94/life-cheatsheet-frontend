@@ -1,0 +1,27 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    opacity: 0.9;
+    transform: scale(0);
+    transition: transform .2s ease-out;
+    overflow-y: scroll;
+    z-index: 100000;
+}
+
+.modal-overlay.modal-show {
+    transform: scale(1);
+    transition: transform .2s ease-in;
+}
+
+.modal-content {
+    max-width: 512px;
+    max-height: 250px !important;
+    background-color: var(--bg-nav-color) !important;
+    padding: 1 em;
+    /* box-shadow: var(--toc-shadow); */
+    margin: 40px auto;
+}

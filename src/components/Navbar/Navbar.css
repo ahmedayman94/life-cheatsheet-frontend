@@ -3,12 +3,12 @@
     color: var(--font-color);
 }
 
-nav > .brand {
+nav>.brand {
     font-family: 'Architects Daughter', cursive;
     font-size: 1.5rem;
+    transition: color ease-in-out 250ms;
 }
 
-a {
-    color: var(--font-color);
-    font-weight: bold;
+nav>.brand:hover {
+    color: unset !important;
 }

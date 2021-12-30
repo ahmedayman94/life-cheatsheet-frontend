@@ -20,7 +20,7 @@ async function editPost(post: Post): Promise<void> {
     await axios.put(`${apiBaseUrl}/posts/${post.id}`, post);
 }
 
-export const PostsService = {
+export const PostService = {
     fetchPostsForCategory,
     createNewPost,
     editPost,

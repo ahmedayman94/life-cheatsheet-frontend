@@ -8,31 +8,27 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import StyleOptions from "../../components/StyleOptions/StyleOptions";
 import "./CreatePost.css";
-import { PostsService } from "../../services/posts.service";
-import categoriesService from "../../services/categories.service";
+import postService from "../../services/post.service";
+import categoriesService from "../../services/category.service";
 
 export interface CreatePostProps {
   categories: Category[] | undefined;
   setCategories: React.Dispatch<React.SetStateAction<Category[]>>;
-  setActiveCategoryId: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 const CreatePost: React.FunctionComponent<CreatePostProps> = ({
   categories,
   setCategories,
-  setActiveCategoryId,
 }) => {
   const history = useHistory();
 
   useEffect(() => {
-    setActiveCategoryId(undefined);
-
     categoriesService
       .fetchAllCategories()
       .then((res) => {
         setCategories(res);
       })
-      .catch((err) => {});
+      .catch((err) => { });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -61,7 +57,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
         ),
       };
 
-      newPost = await PostsService.createNewPost(newPost);
+      newPost = await postService.createNewPost(newPost);
 
       history.push(`/categories/${newPost.category}/posts/${newPost.id}`);
     },

@@ -5,7 +5,7 @@ import Posts from "../../components/Posts/Posts";
 import Spinner from "../../components/Spinner/Spinner";
 import { Category } from "../../interfaces/category.model";
 import { Post } from "../../interfaces/post.model";
-import { PostsService } from "../../services/posts.service";
+import postService from "../../services/post.service";
 
 export interface HomeProps
   extends RouteComponentProps<{ categoryId: string; postId: string }> {
@@ -35,7 +35,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
 
       if (activeCategoryId) {
         setLoading(true);
-        const posts = await PostsService.fetchPostsForCategory(
+        const posts = await postService.fetchPostsForCategory(
           activeCategoryId
         );
         setPosts(posts);
@@ -49,12 +49,15 @@ const Home: React.FunctionComponent<HomeProps> = ({
   }, [categories, match.params.categoryId]);
 
   useEffect(() => {
-    if (activePostId && posts) {
+    if (activePostId && posts)
       setActivePost(posts.find((post) => post.id === +activePostId));
-    } else {
+    else
       setActivePost(undefined);
-    }
   }, [activePostId, posts]);
+
+  useEffect(() => {
+    return setActiveCategoryId(undefined);
+  }, []);
 
   return (
     <>

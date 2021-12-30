@@ -17,8 +17,10 @@ body {
   --bg-nav-color: #1d252d;
   --bg-sidenav-color: #1d252d;
   --font-color: #cddee9;
+  --font-color-active: #fff;
   --box-shadow-focus: 0 0 0 0.2rem rgb(0 123 255 / 25%);
   --primary-color: #5b9f22;
+  --primary-color-darkened: #55b34c;
 }
 
 .light-theme {
@@ -48,6 +50,12 @@ input:focus-visible {
   outline: none;
 }
 
+input.input-text {
+  color: var(--font-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
 ::placeholder {
   color: #9197a3;
   font-weight: normal;
@@ -66,6 +74,23 @@ input:focus-visible {
   border-radius: 5px;
 }
 
+
+button.btn-primary {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color) !important;
+}
+
+button.btn-primary:hover {
+  background-color: var(--primary-color-darkened);
+  border: 1px solid var(--primary-color-darkened) !important;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: var(--primary-color-darkened) !important;
+  border: 1px solid var(--primary-color-darkened) !important;
+  cursor: not-allowed;
+}
+
 button.btn-secondary {
   background-color: transparent !important;
   border: 1px solid var(--primary-color) !important;
@@ -74,4 +99,8 @@ button.btn-secondary {
 button.btn-secondary:hover {
   background-color: var(--primary-color) !important;
   border: 1px solid var(--primary-color) !important;
+}
+
+.card {
+  background-color: var(--bg-nav-color) !important;
 }

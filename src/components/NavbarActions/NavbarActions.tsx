@@ -64,7 +64,7 @@ const NavbarActions: React.FunctionComponent<NavbarActionsProps> =
                         </button>
                     ) :
                         (
-                            <span>
+                            <>
                                 <span className="dropdown-container new-content-container mr-3" ref={refNewContent}>
                                     <a onClick={onNewContentClicked}>
                                         <Plus size="2rem" />
@@ -74,9 +74,9 @@ const NavbarActions: React.FunctionComponent<NavbarActionsProps> =
                                         <Link className="dropdown-item" to="/create-post">
                                             New Post
                                         </Link>
-                                        <a className="dropdown-item" onClick={logoutClicked}>
+                                        <Link className="dropdown-item" to="/create-category">
                                             New Category
-                                        </a>
+                                        </Link>
                                     </div>
                                 </span>
                                 <span className="dropdown-container profile-dropdown-container" ref={ref}>
@@ -92,7 +92,7 @@ const NavbarActions: React.FunctionComponent<NavbarActionsProps> =
                                         </a>
                                     </div>
                                 </span>
-                            </span>
+                            </>
                         )
                     )
                 }

@@ -15,7 +15,6 @@ img.profile-picture {
     display: block;
     transform: scale(0);
     transform-origin: top;
-    transition: transform 250ms ease-in-out;
 }
 
 .dropdown-menu.show {

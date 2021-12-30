@@ -6,7 +6,7 @@ import "draft-js/dist/Draft.css";
 import { useFormik } from "formik";
 import StyleOptions from "../StyleOptions/StyleOptions";
 import { useEffect, useState } from "react";
-import { PostsService } from "../../services/posts.service";
+import postService from "../../services/post.service";
 
 export interface PostModalProps {
   post: Post;
@@ -35,7 +35,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
       };
-      await PostsService.editPost(newPost);
+      await postService.editPost(newPost);
       setPosts((posts) => posts.map((p) => (p.id === post.id ? newPost : p)));
       setIsEditMode(false);
     },
@@ -43,9 +43,8 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
 
   useEffect(() => {
     const callback = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape")
         history.push(`/categories/${match.params.categoryId}`);
-      }
     };
 
     document.addEventListener("keydown", callback);
@@ -82,9 +81,8 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
                 <input
                   id="postTitle"
                   name="postTitle"
-                  className={`post-title w-100 px-3 py-2 ${
-                    isEditMode ? "editMode" : ""
-                  }`}
+                  className={`post-title w-100 px-3 py-2 ${isEditMode ? "editMode" : ""
+                    }`}
                   type="text"
                   onChange={formik.handleChange}
                   value={formik.values.postTitle}
@@ -94,9 +92,8 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
             </div>
             <div className="modalBody mx-1 mb-3 px-1">
               <div
-                className={`postContentContainer postEditorContainer mx-2 p-3${
-                  isEditMode ? " editMode" : ""
-                }`}
+                className={`postContentContainer postEditorContainer mx-2 p-3${isEditMode ? " editMode" : ""
+                  }`}
               >
                 {isEditMode && (
                   <StyleOptions

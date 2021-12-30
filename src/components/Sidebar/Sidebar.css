@@ -26,8 +26,9 @@
 
 .item-link:hover {
     text-decoration: none;
+    color: var(--font-color);
 }
 
 .active .item-link {
-    color: white !important;
+    color: var(--font-color-active) !important;
 }

@@ -6,7 +6,7 @@ import { Category } from "./interfaces/category.model";
 import NotFound from "./pages/NotFound/NotFound";
 
 import "./App.css";
-import categoriesService from "./services/categories.service";
+import categoriesService from "./services/category.service";
 import authService from "./services/auth.service";
 import { UserInfoState } from "./interfaces/user.model";
 import LoginModal from "./components/LoginModal/LoginModal";
@@ -14,6 +14,7 @@ import Profile from "./pages/Profile/Profile";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Home from "./pages/Home/Home";
 import AuthGuard from "./components/AuthGuard/AuthGuard";
+import CreateCategory from "./pages/CreateCategory/CreateCategory";
 
 const App = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -83,7 +84,18 @@ const App = () => {
                   <CreatePost
                     categories={categories}
                     setCategories={setCategories}
-                    setActiveCategoryId={setActiveCategoryId}
+                  />
+                </AuthGuard>
+              )}
+              exact
+            />
+            <Route
+              path="/create-category"
+              render={() => (
+                <AuthGuard userInfoState={userInfoState}>
+                  <CreateCategory
+                    categories={categories}
+                    setCategories={setCategories}
                   />
                 </AuthGuard>
               )}

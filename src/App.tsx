@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Route, RouteComponentProps, Switch, useHistory } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Category } from "./interfaces/category.model";
@@ -62,7 +62,7 @@ const App = () => {
           alert("failed to logout");
         })
     },
-    [],
+    [history],
   );
 
   return (

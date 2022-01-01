@@ -30,7 +30,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
       const newPost: Post = {
         id: post.id,
         title: values.postTitle,
-        category: post.category,
+        categoryId: post.categoryId,
         content: JSON.stringify(
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
@@ -52,6 +52,7 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
     return () => {
       document.removeEventListener("keydown", callback);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onEditorChange = (editorState: EditorState) =>

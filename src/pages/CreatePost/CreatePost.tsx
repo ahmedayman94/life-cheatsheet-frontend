@@ -51,7 +51,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
     onSubmit: async (values) => {
       let newPost: Post = {
         title: values.postTitle,
-        category: +values.postCategory,
+        categoryId: +values.postCategory,
         content: JSON.stringify(
           convertToRaw(values.postEditorState.getCurrentContent())
         ),
@@ -59,7 +59,7 @@ const CreatePost: React.FunctionComponent<CreatePostProps> = ({
 
       newPost = await postService.createNewPost(newPost);
 
-      history.push(`/categories/${newPost.category}/posts/${newPost.id}`);
+      history.push(`/categories/${newPost.categoryId}/posts/${newPost.id}`);
     },
   });
 

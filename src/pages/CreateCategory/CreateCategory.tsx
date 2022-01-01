@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useFormik } from 'formik';
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { TrashFill } from 'react-bootstrap-icons';
 import { Category } from '../../interfaces/category.model'
 import categoriesService from '../../services/category.service';
@@ -20,7 +21,7 @@ const CreateCategory: React.FunctionComponent<CreateCategoryProps> = ({ categori
         } catch (exception) {
             alert('Error occured while attempting to delete category');
         };
-    }, []);
+    }, [setCategories]);
 
     const formik = useFormik({
         initialValues: {

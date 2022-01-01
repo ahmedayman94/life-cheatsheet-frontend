@@ -20,6 +20,10 @@ const LoginModal: React.FunctionComponent<LoginModalProps> =
         const responseGoogle = (
             response: GoogleLoginResponse | GoogleLoginResponseOffline
         ) => {
+            if ((response as any).error) {
+                alert("Failed to login to google..");
+                return;
+            }
             authService.login((response as GoogleLoginResponse).tokenId)
                 .then(res => {
                     setLoading(false)
@@ -46,14 +50,12 @@ const LoginModal: React.FunctionComponent<LoginModalProps> =
                         <div className="row">
                             <div className="col">
                                 <GoogleLogin
-                                    clientId="637229961998-g5bvh8jj55q2ubgvuh7ej17k8no2vnus.apps.googleusercontent.com"
+                                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID as string}
                                     buttonText="Login"
                                     theme="dark"
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                     onRequest={() => setLoading(true)}
-                                    isSignedIn={false}
-                                    fetchBasicProfile={true}
                                     disabled={loading}
                                 />
                             </div>

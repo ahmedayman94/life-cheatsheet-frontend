@@ -3,7 +3,7 @@ import { Category } from "../interfaces/category.model";
 import httpService from "./http.service";
 // import categoriesMock from "../mock-data/categories.json";
 
-const apiBaseUrl = process.env.REACT_APP_API_URL;
+// const apiBaseUrl = process.env.REACT_APP_API_URL;
 
 class CategoryService {
     fetchAllCategories(): Promise<Category[]> {

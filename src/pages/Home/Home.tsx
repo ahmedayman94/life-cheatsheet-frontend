@@ -35,10 +35,14 @@ const Home: React.FunctionComponent<HomeProps> = ({
 
       if (activeCategoryId) {
         setLoading(true);
-        const posts = await postService.fetchPostsForCategory(
-          activeCategoryId
-        );
-        setPosts(posts);
+        try {
+          const posts = await postService.fetchPostsForCategory(
+            activeCategoryId
+          );
+          setPosts(posts);
+        } catch (error) {
+          alert("Failed to get posts for category of id: + " + activeCategoryId);
+        }
       } else setPosts([]);
 
       setLoading(false);
@@ -57,7 +61,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
 
   useEffect(() => {
     return setActiveCategoryId(undefined);
-  }, []);
+  }, [setActiveCategoryId]);
 
   return (
     <>

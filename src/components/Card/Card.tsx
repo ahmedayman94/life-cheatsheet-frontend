@@ -17,7 +17,7 @@ const Card: React.FunctionComponent<CardProps> = ({ post }) => {
     setEditorState(EditorState.createWithContent(content));
   }, [post]);
 
-  const linkToPost = `/categories/${post.category}/posts/${post.id}`;
+  const linkToPost = `/categories/${post.categoryId}/posts/${post.id}`;
   return (
     <div className="card card-default w-100">
       <div className="card-body d-flex flex-column">

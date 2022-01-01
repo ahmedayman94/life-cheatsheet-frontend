@@ -5,5 +5,5 @@ export interface Post {
 
     content: string;
 
-    category: number;
+    categoryId: number;
 }

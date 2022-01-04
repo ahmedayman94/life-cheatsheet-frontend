@@ -8,7 +8,7 @@ body {
 #root {
   --sidebar-width: 190px;
   --overlay-bg-color: rgba(0, 0, 0, 0.85);
-  --navbar-height: 56px;
+  --navbar-height: 54.8px;
   color: var(--font-color);
 }
 

@@ -21,7 +21,7 @@ nav>.brand:hover {
 
 @media screen and (max-width: 771px) {
     .side-bar {
-        display: none !important;
+        display: none;
     }
 }
 

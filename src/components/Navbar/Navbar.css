@@ -2,3 +2,7 @@
     background-color: var(--bg-nav-color);
     color: var(--font-color);
 }
+
+.navbar-toggler {
+    color: var(--font-color);
+}

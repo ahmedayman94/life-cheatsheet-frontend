@@ -49,7 +49,7 @@ const LoginModal: React.FunctionComponent<LoginModalProps> = ({
 			}`}
 		>
 			<div className="modal-dialog">
-				<div className="modal-content d-flex px-5 py-3 pt-5">
+				<div className="login-modal modal-content d-flex px-5 py-3 pt-5">
 					<div className="text-center">
 						<h5>
 							{loading ? (

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { Justify, List } from "react-bootstrap-icons";
 import { UserInfoState } from "../../interfaces/user.model";
 import NavbarActions from "../NavbarActions/NavbarActions";
+
+import "./Navbar.css";
 
 interface NavbarProps {
 	userInfoState: UserInfoState;
@@ -16,16 +17,8 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
 }) => {
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top pl-4">
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span className="navbar-toggler-icon"></span>
+			<button className="navbar-toggler pl-0" type="button">
+				<List />
 			</button>
 			<div className="ml-auto mr-2">
 				<NavbarActions

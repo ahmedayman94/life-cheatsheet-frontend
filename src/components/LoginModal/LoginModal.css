@@ -17,7 +17,7 @@
     transition: transform .2s ease-in;
 }
 
-.modal-content {
+.login-modal {
     max-width: 512px;
     max-height: 250px !important;
     background-color: var(--bg-nav-color) !important;

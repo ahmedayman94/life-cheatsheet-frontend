@@ -101,6 +101,19 @@ button.btn-secondary:hover {
   border: 1px solid var(--primary-color) !important;
 }
 
+button.btn-accent {
+  border: 1px solid var(--font-color);
+  background-color: transparent !important;
+  color: var(--font-color);
+}
+
+button.btn-accent:hover {
+  border: 1px solid var(--font-color);
+  outline: 1px solid var(--font-color);
+  color: var(--font-color);
+  opacity: 0.99;
+}
+
 .card {
   background-color: var(--bg-sidenav-color) !important;
 }

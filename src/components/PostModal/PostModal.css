@@ -5,6 +5,10 @@
     background-color: var(--bg-color);
 }
 
+.modal-header {
+    border: none !important;
+}
+
 .modal-dialog {
     max-width: 70vw !important;
     min-width: 350px;
@@ -27,7 +31,7 @@
     height: 90%;
 }
 
-.modalBody {
+.modal-body {
     /* 100% = dialog height, 120px = header + footer */
     max-height: calc(100% - 120px);
     overflow-y: auto;
@@ -37,15 +41,19 @@
     0% {
         background-color: rgba(255, 255, 255, 0.1);
     }
+
     25% {
         background-color: rgba(255, 255, 255, 0.2);
     }
+
     50% {
         background-color: rgba(255, 255, 255, 0.3);
     }
+
     75% {
         background-color: rgba(255, 255, 255, 0.4);
     }
+
     100% {
         background-color: rgba(255, 255, 255, 0.5);
     }

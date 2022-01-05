@@ -15,3 +15,7 @@
 #newPostContentContainer:focus-within {
     box-shadow: var(--box-shadow-focus);
 }
+
+.post-content-container {
+    overflow: scroll;
+}

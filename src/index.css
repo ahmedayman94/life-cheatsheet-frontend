@@ -18,7 +18,7 @@ body {
   --bg-sidenav-color: #2a3042;
   --font-color: #fff;
   --font-color-active: #fff;
-  --box-shadow-focus: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+  --box-shadow-focus: 0 0 0 0.1rem rgb(80, 90, 172);
   --primary-color: #626ed2;
   --primary-color-darkened: #505AAC;
 }
@@ -37,8 +37,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.input-container {
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+
+.input-container::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  transform: scale(0);
+  background-color: var(--primary-color);
+  transition: transform 250ms ease-in-out;
+}
+
+.input-container:focus-within::after {
+  transform: scale(1);
+}
+
 input {
   border-radius: 5px;
+  position: relative;
 }
 
 input:-internal-autofill-selected {
@@ -46,7 +67,7 @@ input:-internal-autofill-selected {
 }
 
 input:focus-visible {
-  box-shadow: var(--box-shadow-focus);
+  /* box-shadow: var(--box-shadow-focus); */
   outline: none;
 }
 
@@ -116,4 +137,8 @@ button.btn-accent:hover {
 
 .card {
   background-color: var(--bg-sidenav-color) !important;
+}
+
+.form-control:focus {
+  box-shadow: var(--box-shadow-focus) !important;
 }

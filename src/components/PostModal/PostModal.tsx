@@ -83,24 +83,28 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
 					<div className="modal-content">
 						<div className="modal-header m-2 p-2">
 							<h4 className="modal-title w-100">
-								<input
-									id="postTitle"
-									name="postTitle"
-									className={`post-title w-100 px-3 py-2 ${
-										isEditMode
-											? "editMode"
-											: ""
-									}`}
-									type="text"
-									onChange={
-										formik.handleChange
-									}
-									value={
-										formik.values
-											.postTitle
-									}
-									readOnly={!isEditMode}
-								/>
+								<div className="input-container">
+									<input
+										id="postTitle"
+										name="postTitle"
+										className={`post-title w-100 px-3 py-2 ${
+											isEditMode
+												? "editMode"
+												: ""
+										}`}
+										type="text"
+										onChange={
+											formik.handleChange
+										}
+										value={
+											formik.values
+												.postTitle
+										}
+										readOnly={
+											!isEditMode
+										}
+									/>
+								</div>
 							</h4>
 						</div>
 						<div className="modal-body d-flex flex-grow-1 mx-1 mb-3 px-1">

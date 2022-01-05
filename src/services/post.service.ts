@@ -28,8 +28,10 @@ class PostService {
     //     return { ...post, id: newPost.data.id };
     // }
 
-    async editPost(post: Post): Promise<void> {
-        await httpService.axios.put(`${apiBaseUrl}/posts/${post.id}`, post);
+    editPost(post: Post): Promise<Post> {
+        return httpService.axios
+            .put<Post>(`${this.baseUrl}/${post.categoryId}/posts/${post.id}`, post)
+            .then(res => res.data);
     }
 }
 

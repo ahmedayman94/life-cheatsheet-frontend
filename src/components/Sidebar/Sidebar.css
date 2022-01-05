@@ -5,7 +5,18 @@
     color: var(--font-color);
     background-color: var(--bg-sidenav-color);
     width: var(--sidebar-width);
-    margin-top: var(--navbar-height);
+    z-index: 1100;
+    /* margin-top: var(--navbar-height); */
+}
+
+nav>.brand {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.2rem;
+    transition: color ease-in-out 250ms;
+}
+
+nav>.brand:hover {
+    color: unset !important;
 }
 
 @media screen and (max-width: 771px) {

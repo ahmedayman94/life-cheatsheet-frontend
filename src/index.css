@@ -13,14 +13,14 @@ body {
 }
 
 .dark-theme {
-  --bg-color: #101820;
-  --bg-nav-color: #1d252d;
-  --bg-sidenav-color: #1d252d;
-  --font-color: #cddee9;
+  --bg-color: #252735;
+  --bg-nav-color: #363b4c;
+  --bg-sidenav-color: #2a3042;
+  --font-color: #fff;
   --font-color-active: #fff;
   --box-shadow-focus: 0 0 0 0.2rem rgb(0 123 255 / 25%);
-  --primary-color: #5b9f22;
-  --primary-color-darkened: #55b34c;
+  --primary-color: #626ed2;
+  --primary-color-darkened: #505AAC;
 }
 
 .light-theme {
@@ -102,5 +102,5 @@ button.btn-secondary:hover {
 }
 
 .card {
-  background-color: var(--bg-nav-color) !important;
+  background-color: var(--bg-sidenav-color) !important;
 }

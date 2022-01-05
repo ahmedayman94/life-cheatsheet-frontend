@@ -12,8 +12,14 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
 	activeCategoryId,
 }) => {
 	return (
-		<nav className="side-bar position-fixed">
-			<div className="mt-4 px-3 pl-4">
+		<nav className="side-bar position-fixed pt-2 px-3 pl-4">
+			<Link className="navbar-brand brand" to="/">
+				<span className="d-none d-sm-block">
+					Life Cheatsheet
+				</span>
+				<span className="d-sm-none">LCC</span>
+			</Link>
+			<div className="mt-4">
 				<div className="my-2 mb-3 category-title">
 					Categories
 				</div>

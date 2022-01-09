@@ -5,7 +5,7 @@
 	color: var(--font-color);
 	background-color: var(--bg-sidenav-color);
 	width: var(--sidebar-width);
-	z-index: 100;
+	z-index: 10000;
 	/* margin-top: var(--navbar-height); */
 }
 

@@ -1,17 +1,32 @@
 .card-default {
-    border-radius: 4%;
-    height: 250px;
-    overflow: hidden;
-    background-color: var(--bg-nav-color);
+	border-radius: 4%;
+	height: 250px;
+	overflow: hidden;
+	background-color: var(--bg-nav-color);
 }
 
 .card-text {
-    overflow: hidden;
-    margin-bottom: 0px;
-    font-size: 0.9rem;
-    line-height: 1.1;
+	overflow: hidden;
+	margin-bottom: 0px;
+	font-size: 0.9rem;
+	line-height: 1.1;
 }
 
-.card-text>* {
-    overflow: hidden;
+.card-text > * {
+	overflow: hidden;
+}
+
+.card-button-container > .blur-fade {
+	height: 10px;
+	background: var(--bg-sidenav-color);
+	position: absolute;
+	filter: blur(1px);
+	top: 10;
+	z-index: 1;
+	width: 100%;
+	top: -5px;
+}
+
+.card-button-container > .on-top {
+	z-index: 100;
 }

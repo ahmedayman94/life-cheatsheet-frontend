@@ -1,21 +1,21 @@
 #newPostTitle {
-    color: var(--font-color);
+	color: var(--font-color);
 }
 
 #postCategorySelect {
-    background-color: var(--bg-nav-color);
-    color: var(--font-color);
-    border: none;
+	background-color: var(--bg-nav-color);
+	color: var(--font-color);
+	border: none;
 }
 
 #newPostContentContainer {
-    background-color: var(--bg-nav-color);
+	background-color: var(--bg-nav-color);
 }
 
 #newPostContentContainer:focus-within {
-    box-shadow: var(--box-shadow-focus);
+	box-shadow: var(--box-shadow-focus);
 }
 
 .post-content-container {
-    overflow: scroll;
+	overflow: auto;
 }

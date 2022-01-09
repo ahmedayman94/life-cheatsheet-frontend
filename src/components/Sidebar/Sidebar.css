@@ -1,45 +1,45 @@
 .side-bar {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    color: var(--font-color);
-    background-color: var(--bg-sidenav-color);
-    width: var(--sidebar-width);
-    z-index: 1100;
-    /* margin-top: var(--navbar-height); */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	color: var(--font-color);
+	background-color: var(--bg-sidenav-color);
+	width: var(--sidebar-width);
+	z-index: 100;
+	/* margin-top: var(--navbar-height); */
 }
 
-nav>.brand {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 1.2rem;
-    transition: color ease-in-out 250ms;
+nav > .brand {
+	font-family: "Architects Daughter", cursive;
+	font-size: 1.2rem;
+	transition: color ease-in-out 250ms;
 }
 
-nav>.brand:hover {
-    color: unset !important;
+nav > .brand:hover {
+	color: unset !important;
 }
 
 @media screen and (max-width: 771px) {
-    .side-bar {
-        display: none;
-    }
+	.side-bar {
+		display: none;
+	}
 }
 
 .category-title {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .item-link {
-    font-weight: 600;
-    font-size: 90%;
-    color: rgba(255, 255, 255, 0.5);
+	font-weight: 600;
+	font-size: 90%;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .item-link:hover {
-    text-decoration: none;
-    color: var(--font-color);
+	text-decoration: none;
+	color: var(--font-color);
 }
 
 .active .item-link {
-    color: var(--font-color-active) !important;
+	color: var(--font-color-active) !important;
 }

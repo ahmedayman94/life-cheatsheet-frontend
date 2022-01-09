@@ -1,4 +1,4 @@
-import { Justify, List } from "react-bootstrap-icons";
+import { List } from "react-bootstrap-icons";
 import { UserInfoState } from "../../interfaces/user.model";
 import NavbarActions from "../NavbarActions/NavbarActions";
 

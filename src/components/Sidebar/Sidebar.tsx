@@ -12,7 +12,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
 	activeCategoryId,
 }) => {
 	return (
-		<nav className="side-bar position-fixed pt-2 px-3 pl-4">
+		<nav className="sidebar position-fixed pt-2 px-3 pl-4">
 			<Link className="navbar-brand brand" to="/">
 				<span className="d-none d-sm-block">
 					Life Cheatsheet

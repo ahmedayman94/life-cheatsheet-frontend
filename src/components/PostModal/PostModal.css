@@ -1,64 +1,66 @@
 .post-title {
-    font-weight: bold;
-    border: none;
-    color: var(--font-color);
-    background-color: var(--bg-color);
+	font-weight: bold;
+	border: none;
+	color: var(--font-color);
+	background-color: var(--bg-color);
 }
 
 .modal-header {
-    border: none !important;
+	border: none !important;
 }
 
 .modal-dialog {
-    max-width: 70vw !important;
-    min-width: 350px;
+	max-width: 70vw !important;
+	min-width: 350px;
 }
 
 .modal-content {
-    background-color: var(--bg-color);
+	background-color: var(--bg-color);
 }
 
 .modal {
-    animation: 200ms mymove forwards;
+	animation: 200ms mymove forwards;
+	z-index: 10000;
 }
 
 .modalActions {
-    border-top: 1px solid var(--font-color);
+	border-top: 1px solid var(--font-color);
 }
 
-.modal-dialog, .modal-content {
-    /* 80% of window height */
-    height: 90%;
+.modal-dialog,
+.modal-content {
+	/* 80% of window height */
+	height: 90%;
 }
 
 .modal-body {
-    /* 100% = dialog height, 120px = header + footer */
-    max-height: calc(100% - 120px);
-    overflow-y: auto;
+	/* 100% = dialog height, 120px = header + footer */
+	max-height: calc(100% - 120px);
+	overflow-y: auto;
 }
 
 @keyframes mymove {
-    0% {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+	0% {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
 
-    25% {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+	25% {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
 
-    50% {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
+	50% {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
 
-    75% {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
+	75% {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
 
-    100% {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+	100% {
+		background-color: rgba(255, 255, 255, 0.5);
+	}
 }
 
 .editMode {
-    background-color: var(--bg-nav-color)
+	background-color: var(--bg-nav-color);
 }

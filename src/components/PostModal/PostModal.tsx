@@ -107,9 +107,9 @@ const PostModal: React.FunctionComponent<PostModalProps> = ({
 								</div>
 							</h4>
 						</div>
-						<div className="modal-body d-flex flex-grow-1 mx-1 mb-3 px-1">
+						<div className="modal-body d-flex flex-grow-1 mb-3 px-3">
 							<div
-								className={`post-content-container postEditorContainer w-100 mx-2 p-3${
+								className={`post-content-container postEditorContainer w-100 p-3${
 									isEditMode
 										? " editMode"
 										: ""

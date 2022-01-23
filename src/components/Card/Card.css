@@ -17,14 +17,13 @@
 }
 
 .card-button-container > .blur-fade {
-	height: 10px;
+	height: 15px;
 	background: var(--bg-sidenav-color);
 	position: absolute;
-	filter: blur(1px);
-	top: 10;
+	filter: blur(3px);
 	z-index: 1;
 	width: 100%;
-	top: -5px;
+	top: -8px;
 }
 
 .card-button-container > .on-top {
